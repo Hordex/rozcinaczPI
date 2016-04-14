@@ -2,9 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
+#include "GLShader.h"
+#include <glm/glm.hpp>
+#include "Plane.h"
+#define M_PI 3.1415926535897932384626433832795
+#include "Camera.h"
 
-
-void handleEvents(sf::Window& window)
+bool handleEvents(sf::Window& window)
 {
 	sf::Event event;
 	while (window.pollEvent(event))
@@ -13,14 +17,14 @@ void handleEvents(sf::Window& window)
 		{
 		case sf::Event::Closed:
 			window.close();
-			break;
+			return false;
 		case sf::Event::Resized:
 			glViewport(0, 0, event.size.width, event.size.height);
 			break;
 		case sf::Event::KeyPressed:
 			if (event.key.code == sf::Keyboard::Escape)
 				window.close();
-			break;
+			return false;
 			//case sf::Event::LostFocus: break;
 			//case sf::Event::GainedFocus: break;
 			//case sf::Event::TextEntered: break;
@@ -46,6 +50,7 @@ void handleEvents(sf::Window& window)
 			break;
 		}
 	}
+	return true;
 }
 
 int WINAPI wWinMain(_In_ HINSTANCE hInstance,
@@ -54,44 +59,37 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance,
                      _In_ int       nCmdShow)
 {
 	// create the window
-	sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32));
+	sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32,0,16));
 	window.setVerticalSyncEnabled(true);
 
 	//Initialize Glew
 	glewExperimental = GL_TRUE;
 	glewInit();
+
 	// load resources, initialize the OpenGL states, ...
+	GLuint program = LoadShader("test.vert", "test.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-	GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		0.5f, -0.5f, 0.0f,
-		0.0f,  0.5f, 0.0f
-	};
 
-	GLuint VBO;
-	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-	sf::Shader shader;
-	shader.loadFromFile("test.vert","test.frag");
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
-	glEnableVertexAttribArray(0);
+	Plane fig1 = Plane();
+	fig1.setRotation(glm::vec3(glm::radians(20.0), glm::radians(20.0), glm::radians(20.0)));
+	Camera cam = Camera(75, 800, 600, 0.1f, 1000);
+	cam.moveBy(glm::vec3(-1, -2, -3));
+	cam.lookAt(glm::vec3(0, 0, 0));
 
 	// run the main loop
-	while (window.isOpen())
+	while (window.isOpen() && handleEvents(window))
 	{
 		// handle events
-		handleEvents(window);
 
 		// clear the buffers
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 		// draw...
 
-		sf::Shader::bind(&shader);
+		glUseProgram(program);
+		GLint worldmatrixLocation = glGetUniformLocation(program, "viewProjectionMatrix");
+		glUniformMatrix4fv(worldmatrixLocation, 1, GL_FALSE, &(cam.getViewProjectionMatrix()[0][0]));
 
-		sf::Shader::bind(nullptr);
+		fig1.render(program);
 
 		// end the current frame (internally swaps the front and back buffers)
 		window.display();
