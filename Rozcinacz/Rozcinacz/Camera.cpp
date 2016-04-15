@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Camera.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/detail/type_mat.hpp>
 
 void Camera::refreshLookAt()
 {
@@ -24,7 +25,7 @@ glm::mat4& Camera::getViewProjectionMatrix()
 	return viewProjectionMatrix;
 }
 
-void Camera::moveBy(glm::vec3 & vector)
+void Camera::moveBy(const glm::vec3 & vector)
 {
 	SceneObject::moveBy(vector);
 	viewNeedsUpdate = true;
@@ -69,7 +70,6 @@ Camera::Camera()
 {
 
 }
-
 
 Camera::~Camera()
 {

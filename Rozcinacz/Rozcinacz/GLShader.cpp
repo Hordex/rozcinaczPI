@@ -30,8 +30,6 @@ std::string readFile(const char *filePath) {
 	fileStream.close();
 	return content;
 }
-
-
 GLuint LoadShader(const char *vertex_path, const char *fragment_path) {
 	GLuint vertShader = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fragShader = glCreateShader(GL_FRAGMENT_SHADER);

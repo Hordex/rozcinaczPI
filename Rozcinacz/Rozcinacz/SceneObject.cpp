@@ -20,13 +20,13 @@ glm::mat4& SceneObject::getWorldMatrix()
 	return worldMatrix;
 }
 
-void SceneObject::moveBy(glm::vec3 & vector)
+void SceneObject::moveBy(const glm::vec3 & vector)
 {
 	worldMatrixNeedsUpdate = true;
 	position += vector;
 }
 
-void SceneObject::setRotation(glm::vec3 & vector)
+void SceneObject::setRotation(const glm::vec3 & vector)
 {
 	worldMatrixNeedsUpdate = true;
 	rotation = glm::quat(vector);
