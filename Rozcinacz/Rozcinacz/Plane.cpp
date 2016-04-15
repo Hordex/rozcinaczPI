@@ -5,7 +5,9 @@
 void Plane::render(GLuint shaderProgram)
 {
 	GLint worldmatrixLocation = glGetUniformLocation(shaderProgram, "worldMatrix");
+	GLint normalLocation = glGetUniformLocation(shaderProgram, "normal");
 	glUniformMatrix4fv(worldmatrixLocation, 1, GL_FALSE, &(getWorldMatrix()[0][0]));
+	glUniform3fv(normalLocation,1,&normal[0]);
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
@@ -17,6 +19,7 @@ Plane::Plane()
 	vertices[1] = glm::vec3(1.0f, 0.0f, -1.0f);  // Bottom Right
 	vertices[2] = glm::vec3(-1.0f, 0.0f, -1.0f);  // Bottom Left
 	vertices[3] = glm::vec3(-1.0f, 0.0f, 1.0f);
+	normal = glm::vec3(0, 1, 0);
 	//vertices[0] = glm::vec3(1.0f,   1.0f,0.0f);  // Top Right
 	//vertices[1] = glm::vec3(1.0f,  -1.0f,0.0f);  // Bottom Right
 	//vertices[2] = glm::vec3(-1.0f, -1.0f,0.0f);  // Bottom Left

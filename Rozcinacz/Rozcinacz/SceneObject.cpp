@@ -3,7 +3,6 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/detail/type_mat.hpp>
-#include <glm/detail/type_mat.hpp>
 
 
 void SceneObject::updateWorldMatrix()
