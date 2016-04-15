@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Rozcinacz: Camera Class Reference</title>
+<title>Slicer: Camera Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,10 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Rozcinacz
+   <div id="projectname">Slicer
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Wizaualizacja rozcinania wielościanu</div>
+   <div id="projectbrief">Mesh slicing visualization</div>
   </td>
  </tr>
  </tbody>
@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('class_camera.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_camera-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Camera Class Reference</div>  </div>
@@ -130,9 +132,9 @@ Inheritance diagram for Camera:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95a9ce3736e338abe775cca0f22c432b"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a95a9ce3736e338abe775cca0f22c432b">getViewProjectionMatrix</a> ()</td></tr>
-<tr class="memdesc:a95a9ce3736e338abe775cca0f22c432b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the view projection matrix.  <a href="#a95a9ce3736e338abe775cca0f22c432b">More...</a><br /></td></tr>
-<tr class="separator:a95a9ce3736e338abe775cca0f22c432b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac3fe23cbb174ecdc833e3d34ce18ab"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a6ac3fe23cbb174ecdc833e3d34ce18ab">getViewProjectionMatrix</a> ()</td></tr>
+<tr class="memdesc:a6ac3fe23cbb174ecdc833e3d34ce18ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the view projection matrix.  <a href="#a6ac3fe23cbb174ecdc833e3d34ce18ab">More...</a><br /></td></tr>
+<tr class="separator:a6ac3fe23cbb174ecdc833e3d34ce18ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a337bd28925ea4b586f852f5964c8cddd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a337bd28925ea4b586f852f5964c8cddd">moveBy</a> (const glm::vec3 &amp;vector) override</td></tr>
 <tr class="memdesc:a337bd28925ea4b586f852f5964c8cddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the by.  <a href="#a337bd28925ea4b586f852f5964c8cddd">More...</a><br /></td></tr>
 <tr class="separator:a337bd28925ea4b586f852f5964c8cddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,9 +169,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0d268d96d77dbeb45b07a6442e2f4d0d">SceneObject</a> ()</td></tr>
 <tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
 <tr class="separator:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab258d6b94e982d5ae71ad4d7652381f4 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ab258d6b94e982d5ae71ad4d7652381f4">~SceneObject</a> ()</td></tr>
-<tr class="memdesc:ab258d6b94e982d5ae71ad4d7652381f4 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#ab258d6b94e982d5ae71ad4d7652381f4">More...</a><br /></td></tr>
-<tr class="separator:ab258d6b94e982d5ae71ad4d7652381f4 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7c67cdccd3be574032a555662c396b1b">~SceneObject</a> ()</td></tr>
+<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
+<tr class="separator:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af8e5bc5e2104a28fc297ef2f58c328b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#af8e5bc5e2104a28fc297ef2f58c328b1">refreshLookAt</a> ()</td></tr>
+<tr class="memdesc:af8e5bc5e2104a28fc297ef2f58c328b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the look at.  <a href="#af8e5bc5e2104a28fc297ef2f58c328b1">More...</a><br /></td></tr>
+<tr class="separator:af8e5bc5e2104a28fc297ef2f58c328b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af080757da494dd1e4a347f527df4af9c"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#af080757da494dd1e4a347f527df4af9c">projectionMatrix</a></td></tr>
+<tr class="memdesc:af080757da494dd1e4a347f527df4af9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The projection matrix  <a href="#af080757da494dd1e4a347f527df4af9c">More...</a><br /></td></tr>
+<tr class="separator:af080757da494dd1e4a347f527df4af9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e088a154066ed6f2bfca373163f21d2"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a6e088a154066ed6f2bfca373163f21d2">viewMatrix</a></td></tr>
+<tr class="memdesc:a6e088a154066ed6f2bfca373163f21d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The view matrix  <a href="#a6e088a154066ed6f2bfca373163f21d2">More...</a><br /></td></tr>
+<tr class="separator:a6e088a154066ed6f2bfca373163f21d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04299b2b273676ec079bd40899e7a926"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a04299b2b273676ec079bd40899e7a926">viewProjectionMatrix</a></td></tr>
+<tr class="memdesc:a04299b2b273676ec079bd40899e7a926"><td class="mdescLeft">&#160;</td><td class="mdescRight">The view projection matrix  <a href="#a04299b2b273676ec079bd40899e7a926">More...</a><br /></td></tr>
+<tr class="separator:a04299b2b273676ec079bd40899e7a926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867a20bdff1e7e4f9988dea971df75cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a867a20bdff1e7e4f9988dea971df75cd">projectionNeedsUpdate</a></td></tr>
+<tr class="memdesc:a867a20bdff1e7e4f9988dea971df75cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The projection needs update  <a href="#a867a20bdff1e7e4f9988dea971df75cd">More...</a><br /></td></tr>
+<tr class="separator:a867a20bdff1e7e4f9988dea971df75cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483ffa936f7454ab7b83c1a411c49503"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a483ffa936f7454ab7b83c1a411c49503">viewNeedsUpdate</a></td></tr>
+<tr class="memdesc:a483ffa936f7454ab7b83c1a411c49503"><td class="mdescLeft">&#160;</td><td class="mdescRight">The view needs update  <a href="#a483ffa936f7454ab7b83c1a411c49503">More...</a><br /></td></tr>
+<tr class="separator:a483ffa936f7454ab7b83c1a411c49503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826aa87b824d412feaa8e4280297e86b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a826aa87b824d412feaa8e4280297e86b">lookAtLocked</a></td></tr>
+<tr class="memdesc:a826aa87b824d412feaa8e4280297e86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The look at locked  <a href="#a826aa87b824d412feaa8e4280297e86b">More...</a><br /></td></tr>
+<tr class="separator:a826aa87b824d412feaa8e4280297e86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a381048767cdaac817a256adb59ee4ff2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a381048767cdaac817a256adb59ee4ff2">lookAtNeedsUpdate</a></td></tr>
+<tr class="memdesc:a381048767cdaac817a256adb59ee4ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The look at needs update  <a href="#a381048767cdaac817a256adb59ee4ff2">More...</a><br /></td></tr>
+<tr class="separator:a381048767cdaac817a256adb59ee4ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1ca47e0054da061b69e5cb26d4439c"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#aaf1ca47e0054da061b69e5cb26d4439c">lookAtTarget</a></td></tr>
+<tr class="memdesc:aaf1ca47e0054da061b69e5cb26d4439c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The look at target  <a href="#aaf1ca47e0054da061b69e5cb26d4439c">More...</a><br /></td></tr>
+<tr class="separator:aaf1ca47e0054da061b69e5cb26d4439c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -178,9 +213,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position  <a href="#a3fc9eafe43fe119a594caa55b7afea21">More...</a><br /></td></tr>
 <tr class="separator:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
-<tr class="memitem:a7800f6957d484e9104ea5cadd1285d20 inherit pro_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7800f6957d484e9104ea5cadd1285d20">getWorldMatrix</a> ()</td></tr>
-<tr class="memdesc:a7800f6957d484e9104ea5cadd1285d20 inherit pro_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a7800f6957d484e9104ea5cadd1285d20">More...</a><br /></td></tr>
-<tr class="separator:a7800f6957d484e9104ea5cadd1285d20 inherit pro_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c">getWorldMatrix</a> ()</td></tr>
+<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
+<tr class="separator:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
 <tr class="memitem:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f">rotation</a></td></tr>
 <tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
@@ -189,8 +224,6 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_camera.html" title="Camera ">Camera</a> </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a></dd></dl>
-
-<p>Definition at line <a class="el" href="_camera_8h_source.html#l00008">8</a> of file <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a01f94c3543f56ede7af49dc778f19331"></a>
 <div class="memitem">
@@ -206,8 +239,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="class_camera.html" title="Camera ">Camera</a> class. </p>
-
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00069">69</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,8 +296,6 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00057">57</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ad1897942d0ccf91052386388a497349f"></a>
@@ -284,17 +313,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Finalizes an instance of the <a class="el" href="class_camera.html" title="Camera ">Camera</a> class. </p>
 
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00074">74</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a95a9ce3736e338abe775cca0f22c432b"></a>
+<a class="anchor" id="a6ac3fe23cbb174ecdc833e3d34ce18ab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 &amp; Camera::getViewProjectionMatrix </td>
+          <td class="memname">glm::mat4&amp; Camera::getViewProjectionMatrix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -304,8 +331,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the view projection matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00013">13</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,8 +355,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00046">46</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -365,9 +388,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="class_scene_object.html#a02f9a7e9145c939ddd6733cbef252966">SceneObject</a>.</p>
-
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00028">28</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+<p>Reimplemented from <a class="el" href="class_scene_object.html#a144749db2310bf8949ec1bbafeac0097">SceneObject</a>.</p>
 
 </div>
 </div>
@@ -392,8 +413,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00035">35</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -451,7 +470,30 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00063">63</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="af8e5bc5e2104a28fc297ef2f58c328b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::refreshLookAt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refreshes the look at. </p>
 
 </div>
 </div>
@@ -487,8 +529,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_scene_object.html#afc6f8647289e3fbd9e097ab06783f677">SceneObject</a>.</p>
 
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00053">53</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a92f0cdd49c1a4cfd6fe1d6a9427b773f"></a>
@@ -513,13 +553,187 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_camera_8cpp_source.html#l00041">41</a> of file <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a826aa87b824d412feaa8e4280297e86b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Camera::lookAtLocked</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The look at locked </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a class="anchor" id="a381048767cdaac817a256adb59ee4ff2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Camera::lookAtNeedsUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The look at needs update </p>
+
+</div>
+</div>
+<a class="anchor" id="aaf1ca47e0054da061b69e5cb26d4439c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::lookAtTarget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The look at target </p>
+
+</div>
+</div>
+<a class="anchor" id="af080757da494dd1e4a347f527df4af9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Camera::projectionMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The projection matrix </p>
+
+</div>
+</div>
+<a class="anchor" id="a867a20bdff1e7e4f9988dea971df75cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Camera::projectionNeedsUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The projection needs update </p>
+
+</div>
+</div>
+<a class="anchor" id="a6e088a154066ed6f2bfca373163f21d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Camera::viewMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The view matrix </p>
+
+</div>
+</div>
+<a class="anchor" id="a483ffa936f7454ab7b83c1a411c49503"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Camera::viewNeedsUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The view needs update </p>
+
+</div>
+</div>
+<a class="anchor" id="a04299b2b273676ec079bd40899e7a926"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Camera::viewProjectionMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The view projection matrix </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

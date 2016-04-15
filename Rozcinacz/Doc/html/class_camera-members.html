@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Rozcinacz: Member List</title>
+<title>Slicer: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,10 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Rozcinacz
+   <div id="projectname">Slicer
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Wizaualizacja rozcinania wielościanu</div>
+   <div id="projectbrief">Mesh slicing visualization</div>
   </td>
  </tr>
  </tbody>
@@ -115,20 +115,29 @@ $(document).ready(function(){initNavTree('class_camera.html','');});
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_camera.html#a39e58020e0ed59b2a38fd1d1285bdc14">Camera</a>(float FoV, float width, float height, float nearPlane, float farPlane)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a95a9ce3736e338abe775cca0f22c432b">getViewProjectionMatrix</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_scene_object.html#a7800f6957d484e9104ea5cadd1285d20">getWorldMatrix</a>()</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a6ac3fe23cbb174ecdc833e3d34ce18ab">getViewProjectionMatrix</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c">getWorldMatrix</a>()</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_camera.html#ad4ad6760012b1d7fe875de6f5f86b13c">lookAt</a>(glm::vec3 &amp;center)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_camera.html#a337bd28925ea4b586f852f5964c8cddd">moveBy</a>(const glm::vec3 &amp;vector) override</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a067a8804733093e54d714130c25bac13">moveTo</a>(glm::vec3 &amp;vector)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_camera.html#ac4891b0f323f538f3e4d9c30e270db2f">perspective</a>(float FoV, float width, float height, float nearPlane, float farPlane)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21">position</a></td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#a826aa87b824d412feaa8e4280297e86b">lookAtLocked</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a381048767cdaac817a256adb59ee4ff2">lookAtNeedsUpdate</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#aaf1ca47e0054da061b69e5cb26d4439c">lookAtTarget</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a337bd28925ea4b586f852f5964c8cddd">moveBy</a>(const glm::vec3 &amp;vector) override</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#a067a8804733093e54d714130c25bac13">moveTo</a>(glm::vec3 &amp;vector)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#ac4891b0f323f538f3e4d9c30e270db2f">perspective</a>(float FoV, float width, float height, float nearPlane, float farPlane)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21">position</a></td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#af080757da494dd1e4a347f527df4af9c">projectionMatrix</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#a867a20bdff1e7e4f9988dea971df75cd">projectionNeedsUpdate</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#af8e5bc5e2104a28fc297ef2f58c328b1">refreshLookAt</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_camera.html#a9f4e59ad132329bb7a5b62335f28aa1e">render</a>(GLuint shaderProgram) override</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f">rotation</a></td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_scene_object.html#a0d268d96d77dbeb45b07a6442e2f4d0d">SceneObject</a>()</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a92f0cdd49c1a4cfd6fe1d6a9427b773f">setLookAtLock</a>(bool state)</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_scene_object.html#a0e77e0ec381d2b9d9b3238c4e79d34df">setRotation</a>(const glm::vec3 &amp;rotaion)</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_scene_object.html#ab258d6b94e982d5ae71ad4d7652381f4">~SceneObject</a>()</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a6e088a154066ed6f2bfca373163f21d2">viewMatrix</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#a483ffa936f7454ab7b83c1a411c49503">viewNeedsUpdate</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_camera.html#a04299b2b273676ec079bd40899e7a926">viewProjectionMatrix</a></td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a>()</td><td class="entry"><a class="el" href="class_camera.html">Camera</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_scene_object.html#a7c67cdccd3be574032a555662c396b1b">~SceneObject</a>()</td><td class="entry"><a class="el" href="class_scene_object.html">SceneObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

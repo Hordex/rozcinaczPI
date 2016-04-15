@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Rozcinacz: SceneObject Class Reference</title>
+<title>Slicer: SceneObject Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,10 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Rozcinacz
+   <div id="projectname">Slicer
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Wizaualizacja rozcinania wielościanu</div>
+   <div id="projectbrief">Mesh slicing visualization</div>
   </td>
  </tr>
  </tbody>
@@ -111,6 +111,8 @@ $(document).ready(function(){initNavTree('class_scene_object.html','');});
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_scene_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SceneObject Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -134,9 +136,9 @@ Inheritance diagram for SceneObject:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02f9a7e9145c939ddd6733cbef252966"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a02f9a7e9145c939ddd6733cbef252966">moveBy</a> (const glm::vec3 &amp;vector)</td></tr>
-<tr class="memdesc:a02f9a7e9145c939ddd6733cbef252966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the by.  <a href="#a02f9a7e9145c939ddd6733cbef252966">More...</a><br /></td></tr>
-<tr class="separator:a02f9a7e9145c939ddd6733cbef252966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144749db2310bf8949ec1bbafeac0097"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a144749db2310bf8949ec1bbafeac0097">moveBy</a> (const glm::vec3 &amp;vector)</td></tr>
+<tr class="memdesc:a144749db2310bf8949ec1bbafeac0097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the by.  <a href="#a144749db2310bf8949ec1bbafeac0097">More...</a><br /></td></tr>
+<tr class="separator:a144749db2310bf8949ec1bbafeac0097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0e77e0ec381d2b9d9b3238c4e79d34df">setRotation</a> (const glm::vec3 &amp;rotaion)</td></tr>
 <tr class="memdesc:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation.  <a href="#a0e77e0ec381d2b9d9b3238c4e79d34df">More...</a><br /></td></tr>
 <tr class="separator:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,9 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0d268d96d77dbeb45b07a6442e2f4d0d">SceneObject</a> ()</td></tr>
 <tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
 <tr class="separator:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab258d6b94e982d5ae71ad4d7652381f4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ab258d6b94e982d5ae71ad4d7652381f4">~SceneObject</a> ()</td></tr>
-<tr class="memdesc:ab258d6b94e982d5ae71ad4d7652381f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#ab258d6b94e982d5ae71ad4d7652381f4">More...</a><br /></td></tr>
-<tr class="separator:ab258d6b94e982d5ae71ad4d7652381f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c67cdccd3be574032a555662c396b1b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7c67cdccd3be574032a555662c396b1b">~SceneObject</a> ()</td></tr>
+<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
+<tr class="separator:a7c67cdccd3be574032a555662c396b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -158,20 +160,36 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a7800f6957d484e9104ea5cadd1285d20"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7800f6957d484e9104ea5cadd1285d20">getWorldMatrix</a> ()</td></tr>
-<tr class="memdesc:a7800f6957d484e9104ea5cadd1285d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a7800f6957d484e9104ea5cadd1285d20">More...</a><br /></td></tr>
-<tr class="separator:a7800f6957d484e9104ea5cadd1285d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6d39cb8cf6600b7009d19a636c631c"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c">getWorldMatrix</a> ()</td></tr>
+<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
+<tr class="separator:a8a6d39cb8cf6600b7009d19a636c631c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f">rotation</a></td></tr>
 <tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
 <tr class="separator:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3f728463fb39c199a68bae99ca82aaf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a3f728463fb39c199a68bae99ca82aaf0">updateWorldMatrix</a> ()</td></tr>
+<tr class="memdesc:a3f728463fb39c199a68bae99ca82aaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the world matrix.  <a href="#a3f728463fb39c199a68bae99ca82aaf0">More...</a><br /></td></tr>
+<tr class="separator:a3f728463fb39c199a68bae99ca82aaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a100c1dace7e4a5390f136fb6dec6c79f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_scene_object.html">SceneObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a100c1dace7e4a5390f136fb6dec6c79f">children</a></td></tr>
+<tr class="memdesc:a100c1dace7e4a5390f136fb6dec6c79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The children  <a href="#a100c1dace7e4a5390f136fb6dec6c79f">More...</a><br /></td></tr>
+<tr class="separator:a100c1dace7e4a5390f136fb6dec6c79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d2e2426d7ad4a24f2a3eeca201f62c"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a25d2e2426d7ad4a24f2a3eeca201f62c">worldMatrix</a></td></tr>
+<tr class="memdesc:a25d2e2426d7ad4a24f2a3eeca201f62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The world matrix  <a href="#a25d2e2426d7ad4a24f2a3eeca201f62c">More...</a><br /></td></tr>
+<tr class="separator:a25d2e2426d7ad4a24f2a3eeca201f62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56550b8fd7442554cb85d92c08160048"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a56550b8fd7442554cb85d92c08160048">worldMatrixNeedsUpdate</a></td></tr>
+<tr class="memdesc:a56550b8fd7442554cb85d92c08160048"><td class="mdescLeft">&#160;</td><td class="mdescRight">The world matrix needs update  <a href="#a56550b8fd7442554cb85d92c08160048">More...</a><br /></td></tr>
+<tr class="separator:a56550b8fd7442554cb85d92c08160048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> </p>
-
-<p>Definition at line <a class="el" href="_scene_object_8h_source.html#l00010">10</a> of file <a class="el" href="_scene_object_8h_source.html">SceneObject.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0d268d96d77dbeb45b07a6442e2f4d0d"></a>
 <div class="memitem">
@@ -188,11 +206,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class. </p>
 
-<p>Definition at line <a class="el" href="_scene_object_8cpp_source.html#l00035">35</a> of file <a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="ab258d6b94e982d5ae71ad4d7652381f4"></a>
+<a class="anchor" id="a7c67cdccd3be574032a555662c396b1b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -200,7 +216,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SceneObject::~SceneObject </td>
+          <td class="memname">virtual SceneObject::~SceneObject </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -215,12 +231,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class. </p>
 
-<p>Definition at line <a class="el" href="_scene_object_8cpp_source.html#l00043">43</a> of file <a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7800f6957d484e9104ea5cadd1285d20"></a>
+<a class="anchor" id="a8a6d39cb8cf6600b7009d19a636c631c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -228,7 +242,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 &amp; SceneObject::getWorldMatrix </td>
+          <td class="memname">glm::mat4&amp; SceneObject::getWorldMatrix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -244,11 +258,9 @@ Protected Attributes</h2></td></tr>
 <p>Gets the world matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_scene_object_8cpp_source.html#l00013">13</a> of file <a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a02f9a7e9145c939ddd6733cbef252966"></a>
+<a class="anchor" id="a144749db2310bf8949ec1bbafeac0097"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -256,7 +268,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SceneObject::moveBy </td>
+          <td class="memname">virtual void SceneObject::moveBy </td>
           <td>(</td>
           <td class="paramtype">const glm::vec3 &amp;&#160;</td>
           <td class="paramname"><em>vector</em></td><td>)</td>
@@ -279,8 +291,6 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p>Reimplemented in <a class="el" href="class_camera.html#a337bd28925ea4b586f852f5964c8cddd">Camera</a>.</p>
-
-<p>Definition at line <a class="el" href="_scene_object_8cpp_source.html#l00023">23</a> of file <a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -340,11 +350,56 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_scene_object_8cpp_source.html#l00029">29</a> of file <a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a3f728463fb39c199a68bae99ca82aaf0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneObject::updateWorldMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the world matrix. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a100c1dace7e4a5390f136fb6dec6c79f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_scene_object.html">SceneObject</a>*&gt; SceneObject::children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The children </p>
+
+</div>
+</div>
 <a class="anchor" id="a3fc9eafe43fe119a594caa55b7afea21"></a>
 <div class="memitem">
 <div class="memproto">
@@ -356,8 +411,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The position </p>
-
-<p>Definition at line <a class="el" href="_scene_object_8h_source.html#l00042">42</a> of file <a class="el" href="_scene_object_8h_source.html">SceneObject.h</a>.</p>
 
 </div>
 </div>
@@ -381,13 +434,54 @@ Protected Attributes</h2></td></tr>
 
 <p>The rotation </p>
 
-<p>Definition at line <a class="el" href="_scene_object_8h_source.html#l00032">32</a> of file <a class="el" href="_scene_object_8h_source.html">SceneObject.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a25d2e2426d7ad4a24f2a3eeca201f62c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 SceneObject::worldMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The world matrix </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a class="anchor" id="a56550b8fd7442554cb85d92c08160048"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SceneObject::worldMatrixNeedsUpdate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The world matrix needs update </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_scene_object_8h_source.html">SceneObject.h</a></li>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_scene_object_8cpp_source.html">SceneObject.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

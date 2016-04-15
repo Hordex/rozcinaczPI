@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['loadshader',['LoadShader',['../_g_l_shader_8cpp.html#a916adc8d31dfc3bc9c09100462139700',1,'LoadShader(const char *vertex_path, const char *fragment_path):&#160;GLShader.cpp'],['../_g_l_shader_8h.html#a916adc8d31dfc3bc9c09100462139700',1,'LoadShader(const char *vertex_path, const char *fragment_path):&#160;GLShader.cpp']]],
-  ['lookat',['lookAt',['../class_camera.html#ad4ad6760012b1d7fe875de6f5f86b13c',1,'Camera']]]
+  ['getviewprojectionmatrix',['getViewProjectionMatrix',['../class_camera.html#a6ac3fe23cbb174ecdc833e3d34ce18ab',1,'Camera']]],
+  ['getworldmatrix',['getWorldMatrix',['../class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c',1,'SceneObject']]]
 ];

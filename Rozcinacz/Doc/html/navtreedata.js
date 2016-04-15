@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Rozcinacz", "index.html", [
+  [ "Slicer", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -24,7 +24,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_camera_8cpp.html"
+"_camera_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

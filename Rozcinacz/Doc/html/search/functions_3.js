@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['getviewprojectionmatrix',['getViewProjectionMatrix',['../class_camera.html#a95a9ce3736e338abe775cca0f22c432b',1,'Camera']]],
-  ['getworldmatrix',['getWorldMatrix',['../class_scene_object.html#a7800f6957d484e9104ea5cadd1285d20',1,'SceneObject']]]
+  ['eventhandler',['eventHandler',['../class_slicer.html#ab6bdb130abab0fd188fb84264b116761',1,'Slicer']]]
 ];

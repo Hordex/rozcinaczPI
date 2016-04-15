@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['moveby',['moveBy',['../class_camera.html#a337bd28925ea4b586f852f5964c8cddd',1,'Camera::moveBy()'],['../class_scene_object.html#a02f9a7e9145c939ddd6733cbef252966',1,'SceneObject::moveBy()']]],
-  ['moveto',['moveTo',['../class_camera.html#a067a8804733093e54d714130c25bac13',1,'Camera']]]
+  ['loadshader',['LoadShader',['../_g_l_shader_8h.html#a916adc8d31dfc3bc9c09100462139700',1,'GLShader.h']]],
+  ['lookat',['lookAt',['../class_camera.html#ad4ad6760012b1d7fe875de6f5f86b13c',1,'Camera']]]
 ];

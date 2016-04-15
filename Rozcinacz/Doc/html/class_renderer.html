@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Rozcinacz: Renderer Class Reference</title>
+<title>Slicer: Renderer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,10 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Rozcinacz
+   <div id="projectname">Slicer
    &#160;<span id="projectnumber">0.1</span>
    </div>
-   <div id="projectbrief">Wizaualizacja rozcinania wielościanu</div>
+   <div id="projectbrief">Mesh slicing visualization</div>
   </td>
  </tr>
  </tbody>
@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('class_renderer.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Renderer Class Reference</div>  </div>
@@ -130,11 +132,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afeee408862d5bd6255a6882d47e6d5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a> ()</td></tr>
 <tr class="memdesc:afeee408862d5bd6255a6882d47e6d5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class.  <a href="#afeee408862d5bd6255a6882d47e6d5cd">More...</a><br /></td></tr>
 <tr class="separator:afeee408862d5bd6255a6882d47e6d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ace03c23023902be42e3ba3863d4e2496"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#ace03c23023902be42e3ba3863d4e2496">render</a> (glm::mat4 currentMatrix, <a class="el" href="class_scene_object.html">SceneObject</a> &amp;object)</td></tr>
+<tr class="memdesc:ace03c23023902be42e3ba3863d4e2496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the specified current matrix.  <a href="#ace03c23023902be42e3ba3863d4e2496">More...</a><br /></td></tr>
+<tr class="separator:ace03c23023902be42e3ba3863d4e2496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2a649bdb18af0d908932ff558cf89e1d"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a2a649bdb18af0d908932ff558cf89e1d">program</a></td></tr>
+<tr class="memdesc:a2a649bdb18af0d908932ff558cf89e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The program  <a href="#a2a649bdb18af0d908932ff558cf89e1d">More...</a><br /></td></tr>
+<tr class="separator:a2a649bdb18af0d908932ff558cf89e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> </p>
-
-<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00009">9</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7ebf46f54dab9905f79b80f7fddb76a6"></a>
 <div class="memitem">
@@ -150,8 +162,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class. </p>
-
-<p>Definition at line <a class="el" href="_renderer_8cpp_source.html#l00030">30</a> of file <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,11 +180,52 @@ Public Member Functions</h2></td></tr>
 
 <p>Finalizes an instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class. </p>
 
-<p>Definition at line <a class="el" href="_renderer_8cpp_source.html#l00042">42</a> of file <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ace03c23023902be42e3ba3863d4e2496"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::render </td>
+          <td>(</td>
+          <td class="paramtype">glm::mat4&#160;</td>
+          <td class="paramname"><em>currentMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_scene_object.html">SceneObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>object</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders the specified current matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentMatrix</td><td>The current matrix.</td></tr>
+    <tr><td class="paramname">object</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="af871c6a19cf1ce1c3b529903ab143866"></a>
 <div class="memitem">
 <div class="memproto">
@@ -208,13 +259,33 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_renderer_8cpp_source.html#l00012">12</a> of file <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a2a649bdb18af0d908932ff558cf89e1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint Renderer::program</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The program </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_renderer_8h_source.html">Renderer.h</a></li>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

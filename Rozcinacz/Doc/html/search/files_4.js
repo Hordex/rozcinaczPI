@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['renderer_2ecpp',['Renderer.cpp',['../_renderer_8cpp.html',1,'']]],
-  ['renderer_2eh',['Renderer.h',['../_renderer_8h.html',1,'']]]
+  ['scene_2eh',['Scene.h',['../_scene_8h.html',1,'']]],
+  ['sceneobject_2eh',['SceneObject.h',['../_scene_object_8h.html',1,'']]],
+  ['slicer_2eh',['Slicer.h',['../_slicer_8h.html',1,'']]]
 ];
