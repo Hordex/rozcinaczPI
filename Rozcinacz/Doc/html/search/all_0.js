@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fuse_5fmath_5fdefines',['_USE_MATH_DEFINES',['../_slicer_8h.html#a525335710b53cb064ca56b936120431e',1,'Slicer.h']]]
+  ['addchild',['addChild',['../class_scene.html#a9eb1d34a3ffe830d8f8a7d3b100fde3c',1,'Scene']]]
 ];

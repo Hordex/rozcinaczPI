@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventhandler',['eventHandler',['../class_slicer.html#ab6bdb130abab0fd188fb84264b116761',1,'Slicer']]]
+  ['indices',['indices',['../class_plane.html#a1a946b8fe52bf41a47ef43d9ece461c4',1,'Plane']]]
 ];

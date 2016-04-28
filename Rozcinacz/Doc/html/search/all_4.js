@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['defaultscene',['defaultScene',['../class_scene.html#a01100b85642ad932afaaa4065fdec9c3',1,'Scene']]]
+  ['getviewprojectionmatrix',['getViewProjectionMatrix',['../class_camera.html#a6ac3fe23cbb174ecdc833e3d34ce18ab',1,'Camera']]],
+  ['getworldmatrix',['getWorldMatrix',['../class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c',1,'SceneObject']]]
 ];

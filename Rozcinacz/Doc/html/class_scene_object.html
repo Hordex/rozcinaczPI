@@ -49,7 +49,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -119,61 +118,59 @@ $(document).ready(function(){initNavTree('class_scene_object.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a>  
+<p>Base class for objects displayed on scene  
  <a href="class_scene_object.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_scene_object_8h_source.html">SceneObject.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SceneObject:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_scene_object.png" usemap="#SceneObject_map" alt=""/>
   <map id="SceneObject_map" name="SceneObject_map">
-<area href="class_camera.html" title="Camera " alt="Camera" shape="rect" coords="0,56,85,80"/>
-<area href="class_plane.html" title="Plane " alt="Plane" shape="rect" coords="95,56,180,80"/>
+<area href="class_camera.html" title="Object throuh which scene will be displayed " alt="Camera" shape="rect" coords="0,56,85,80"/>
+<area href="class_plane.html" title="Geometric Plane object " alt="Plane" shape="rect" coords="95,56,180,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a144749db2310bf8949ec1bbafeac0097"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a144749db2310bf8949ec1bbafeac0097">moveBy</a> (const glm::vec3 &amp;vector)</td></tr>
-<tr class="memdesc:a144749db2310bf8949ec1bbafeac0097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the by.  <a href="#a144749db2310bf8949ec1bbafeac0097">More...</a><br /></td></tr>
+<tr class="memdesc:a144749db2310bf8949ec1bbafeac0097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the object by specified vector  <a href="#a144749db2310bf8949ec1bbafeac0097">More...</a><br /></td></tr>
 <tr class="separator:a144749db2310bf8949ec1bbafeac0097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0e77e0ec381d2b9d9b3238c4e79d34df">setRotation</a> (const glm::vec3 &amp;rotaion)</td></tr>
-<tr class="memdesc:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation.  <a href="#a0e77e0ec381d2b9d9b3238c4e79d34df">More...</a><br /></td></tr>
+<tr class="memdesc:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation of object  <a href="#a0e77e0ec381d2b9d9b3238c4e79d34df">More...</a><br /></td></tr>
 <tr class="separator:a0e77e0ec381d2b9d9b3238c4e79d34df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc6f8647289e3fbd9e097ab06783f677"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#afc6f8647289e3fbd9e097ab06783f677">render</a> (GLuint shaderProgram)=0</td></tr>
-<tr class="memdesc:afc6f8647289e3fbd9e097ab06783f677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the specified shader program.  <a href="#afc6f8647289e3fbd9e097ab06783f677">More...</a><br /></td></tr>
-<tr class="separator:afc6f8647289e3fbd9e097ab06783f677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e59ab140c021845d939525e9465886f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0e59ab140c021845d939525e9465886f">render</a> (unsigned shaderProgram)=0</td></tr>
+<tr class="memdesc:a0e59ab140c021845d939525e9465886f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders object with the specified shader program.  <a href="#a0e59ab140c021845d939525e9465886f">More...</a><br /></td></tr>
+<tr class="separator:a0e59ab140c021845d939525e9465886f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0d268d96d77dbeb45b07a6442e2f4d0d">SceneObject</a> ()</td></tr>
-<tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
+<tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
 <tr class="separator:a0d268d96d77dbeb45b07a6442e2f4d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c67cdccd3be574032a555662c396b1b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7c67cdccd3be574032a555662c396b1b">~SceneObject</a> ()</td></tr>
-<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
+<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
 <tr class="separator:a7c67cdccd3be574032a555662c396b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3fc9eafe43fe119a594caa55b7afea21"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21">position</a></td></tr>
-<tr class="memdesc:a3fc9eafe43fe119a594caa55b7afea21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position  <a href="#a3fc9eafe43fe119a594caa55b7afea21">More...</a><br /></td></tr>
+<tr class="memdesc:a3fc9eafe43fe119a594caa55b7afea21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of object  <a href="#a3fc9eafe43fe119a594caa55b7afea21">More...</a><br /></td></tr>
 <tr class="separator:a3fc9eafe43fe119a594caa55b7afea21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8a6d39cb8cf6600b7009d19a636c631c"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c">getWorldMatrix</a> ()</td></tr>
-<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
+<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
 <tr class="separator:a8a6d39cb8cf6600b7009d19a636c631c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f">rotation</a></td></tr>
-<tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
+<tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation of object  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
 <tr class="separator:ae27376aaca87543a75b5a2cd0daf6e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3f728463fb39c199a68bae99ca82aaf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a3f728463fb39c199a68bae99ca82aaf0">updateWorldMatrix</a> ()</td></tr>
-<tr class="memdesc:a3f728463fb39c199a68bae99ca82aaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the world matrix.  <a href="#a3f728463fb39c199a68bae99ca82aaf0">More...</a><br /></td></tr>
+<tr class="memdesc:a3f728463fb39c199a68bae99ca82aaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the world matrix  <a href="#a3f728463fb39c199a68bae99ca82aaf0">More...</a><br /></td></tr>
 <tr class="separator:a3f728463fb39c199a68bae99ca82aaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -185,11 +182,11 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a25d2e2426d7ad4a24f2a3eeca201f62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The world matrix  <a href="#a25d2e2426d7ad4a24f2a3eeca201f62c">More...</a><br /></td></tr>
 <tr class="separator:a25d2e2426d7ad4a24f2a3eeca201f62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56550b8fd7442554cb85d92c08160048"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a56550b8fd7442554cb85d92c08160048">worldMatrixNeedsUpdate</a></td></tr>
-<tr class="memdesc:a56550b8fd7442554cb85d92c08160048"><td class="mdescLeft">&#160;</td><td class="mdescRight">The world matrix needs update  <a href="#a56550b8fd7442554cb85d92c08160048">More...</a><br /></td></tr>
+<tr class="memdesc:a56550b8fd7442554cb85d92c08160048"><td class="mdescLeft">&#160;</td><td class="mdescRight">The world matrix needs to be updated  <a href="#a56550b8fd7442554cb85d92c08160048">More...</a><br /></td></tr>
 <tr class="separator:a56550b8fd7442554cb85d92c08160048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> </p>
+<div class="textblock"><p>Base class for objects displayed on scene </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0d268d96d77dbeb45b07a6442e2f4d0d"></a>
 <div class="memitem">
@@ -204,7 +201,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class. </p>
 
 </div>
 </div>
@@ -229,7 +226,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class. </p>
+<p>Finalizes an instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class. </p>
 
 </div>
 </div>
@@ -255,7 +252,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the world matrix. </p>
+<p>Gets the world matrix </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
@@ -282,7 +279,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Moves the by. </p>
+<p>Moves the object by specified vector </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vector</td><td>The vector.</td></tr>
@@ -294,7 +291,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc6f8647289e3fbd9e097ab06783f677"></a>
+<a class="anchor" id="a0e59ab140c021845d939525e9465886f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -304,7 +301,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void SceneObject::render </td>
           <td>(</td>
-          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>shaderProgram</em></td><td>)</td>
           <td></td>
         </tr>
@@ -316,7 +313,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Renders the specified shader program. </p>
+<p>Renders object with the specified shader program. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">shaderProgram</td><td>The shader program.</td></tr>
@@ -324,7 +321,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_camera.html#a9f4e59ad132329bb7a5b62335f28aa1e">Camera</a>, and <a class="el" href="class_plane.html#a7a3ab015eb46793f9b02c74916b58e01">Plane</a>.</p>
+<p>Implemented in <a class="el" href="class_camera.html#acb92c250c6787f947fee7269de5ea0d2">Camera</a>, and <a class="el" href="class_plane.html#aec8fa74baf560227bb25f63d6ee8a2cc">Plane</a>.</p>
 
 </div>
 </div>
@@ -342,7 +339,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the rotation. </p>
+<p>Sets the rotation of object </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rotaion</td><td>The rotaion.</td></tr>
@@ -373,7 +370,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Updates the world matrix. </p>
+<p>Updates the world matrix </p>
 
 </div>
 </div>
@@ -410,7 +407,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The position </p>
+<p>The position of object </p>
 
 </div>
 </div>
@@ -432,7 +429,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The rotation </p>
+<p>The rotation of object </p>
 
 </div>
 </div>
@@ -476,13 +473,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The world matrix needs update </p>
+<p>The world matrix needs to be updated </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_scene_object_8h_source.html">SceneObject.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

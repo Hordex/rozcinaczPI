@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "Slicer.h"
+#include <glm/glm.hpp>
+#include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
-#include "GLShader.h"
-#include <glm/glm.hpp>
-#include "Plane.h"
-
-#define MAGICNUMBERS (5.0f / ((float)width) / (4.0f - r))
+#define MAXRADIUS 5.0f
+#define MINRADIUS 3.0f
+#define MAGICNUMBERS ((MAXRADIUS + 1.0f) / ((float)width) / (MAXRADIUS + 1.0f - r))
 #include "Renderer.h"
 
 bool Slicer::eventHandler()
@@ -34,7 +34,7 @@ bool Slicer::eventHandler()
 			//case sf::Event::TextEntered: break;
 			//case sf::Event::KeyReleased: break;
 		case sf::Event::MouseWheelMoved:
-			r = std::max(0.1f, std::min(3.0f, r + 0.1f * -event.mouseWheel.delta));
+			r = std::max(MINRADIUS, std::min(MAXRADIUS, r + 0.1f * -event.mouseWheel.delta));
 			newCam = true;
 			break;
 			//case sf::Event::MouseWheelScrolled: break;
@@ -80,7 +80,7 @@ bool Slicer::eventHandler()
 	return true;
 }
 
-glm::vec3 Slicer::calculateCameraPosition()
+void Slicer::calculateCameraPosition(class Camera& camera) const
 {
 	glm::vec3 ret;
 
@@ -88,7 +88,7 @@ glm::vec3 Slicer::calculateCameraPosition()
 	ret.x = r * sin(pa) * sin(aa);
 	ret.y = r * cos(pa);
 
-	return ret;
+	camera.moveTo(ret);
 }
 
 Slicer::Slicer()
@@ -96,13 +96,13 @@ Slicer::Slicer()
 	// create the window
 	window = new sf::Window(sf::VideoMode(width, height), "OpenGL", sf::Style::Default, sf::ContextSettings(32, 0, 16));
 	window->setVerticalSyncEnabled(true);
-
+	r = MINRADIUS;
 	Renderer renderer;
 
 	Scene scene;
 
-	Camera cam(75.0f, width, height, 0.1f, 1000);
-	cam.moveTo(calculateCameraPosition());
+	Camera cam(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
+	calculateCameraPosition(cam);
 	cam.lookAt(glm::vec3(0, 0, 0));
 	cam.setLookAtLock(true);
 
@@ -112,12 +112,12 @@ Slicer::Slicer()
 		// handle events
 		if (newCam)
 		{
-			cam.moveTo(calculateCameraPosition());
+			calculateCameraPosition(cam);
 			newCam = false;
 		}
 		if(newAspectRatio)
 		{
-			cam.perspective(75.0f, width, height, 0.1f, 1000);
+			cam.perspective(75.0f, width, height, 0.1f, 1000.0f);
 			newAspectRatio = false;
 		}
 

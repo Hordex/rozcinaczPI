@@ -1,17 +1,18 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <glm/glm.hpp>
+//#include <glm/glm.hpp>
 #define _USE_MATH_DEFINES
 #include "math.h"
-#include "Camera.h"
-
+namespace sf
+{
+	class Window;
+}
 /// <summary>
-/// 
+/// Main class holding interface logic
 /// </summary>
 class Slicer
 {
 	/// <summary>
-	/// Events the handler.
+	/// Handles events.
 	/// </summary>
 	/// <returns></returns>
 	bool eventHandler();
@@ -38,7 +39,7 @@ class Slicer
 	/// <summary>
 	/// The radius
 	/// </summary>
-	float r = 2.0f;
+	float r;
 	/// <summary>
 	/// The width
 	/// </summary>
@@ -50,7 +51,7 @@ class Slicer
 	/// <summary>
 	/// The pa
 	/// </summary>
-	float pa = M_PI / 2.0f;
+	float pa = (float) M_PI / 2.0f;
 	/// <summary>
 	/// The aa
 	/// </summary>
@@ -59,7 +60,7 @@ class Slicer
 	/// Calculates the camera position.
 	/// </summary>
 	/// <returns></returns>
-	glm::vec3 calculateCameraPosition();
+	void calculateCameraPosition(class Camera& camera) const;
 public:
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Slicer"/> class.

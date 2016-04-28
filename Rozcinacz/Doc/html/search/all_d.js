@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['r',['r',['../class_slicer.html#abc4eae473c4e814c8348991bc0e03477',1,'Slicer']]],
-  ['refreshlookat',['refreshLookAt',['../class_camera.html#af8e5bc5e2104a28fc297ef2f58c328b1',1,'Camera']]],
-  ['render',['render',['../class_camera.html#a9f4e59ad132329bb7a5b62335f28aa1e',1,'Camera::render()'],['../class_plane.html#a7a3ab015eb46793f9b02c74916b58e01',1,'Plane::render()'],['../class_renderer.html#ace03c23023902be42e3ba3863d4e2496',1,'Renderer::render(glm::mat4 currentMatrix, SceneObject &amp;object)'],['../class_renderer.html#af871c6a19cf1ce1c3b529903ab143866',1,'Renderer::render(Scene &amp;scene, Camera &amp;camera)'],['../class_scene_object.html#afc6f8647289e3fbd9e097ab06783f677',1,'SceneObject::render()']]],
-  ['renderer',['Renderer',['../class_renderer.html',1,'Renderer'],['../class_renderer.html#a7ebf46f54dab9905f79b80f7fddb76a6',1,'Renderer::Renderer()']]],
-  ['renderer_2eh',['Renderer.h',['../_renderer_8h.html',1,'']]],
-  ['rotation',['rotation',['../class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f',1,'SceneObject']]]
+  ['vao',['VAO',['../class_plane.html#a7a7aaf39d14283b366b6435bf44d4a5e',1,'Plane']]],
+  ['vertices',['vertices',['../class_plane.html#a8b7eae2c33828cc7ec9d7318dc0ed09d',1,'Plane']]],
+  ['viewmatrix',['viewMatrix',['../class_camera.html#a6e088a154066ed6f2bfca373163f21d2',1,'Camera']]],
+  ['viewneedsupdate',['viewNeedsUpdate',['../class_camera.html#a483ffa936f7454ab7b83c1a411c49503',1,'Camera']]],
+  ['viewprojectionmatrix',['viewProjectionMatrix',['../class_camera.html#a04299b2b273676ec079bd40899e7a926',1,'Camera']]]
 ];
