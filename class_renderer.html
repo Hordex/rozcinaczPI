@@ -49,7 +49,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -116,10 +115,8 @@ $(document).ready(function(){initNavTree('class_renderer.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_renderer.html" title="Renderer ">Renderer</a>  
+<p>Class responsible for rendering scene  
  <a href="class_renderer.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_renderer_8h_source.html">Renderer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -127,26 +124,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af871c6a19cf1ce1c3b529903ab143866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the specified scene.  <a href="#af871c6a19cf1ce1c3b529903ab143866">More...</a><br /></td></tr>
 <tr class="separator:af871c6a19cf1ce1c3b529903ab143866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ebf46f54dab9905f79b80f7fddb76a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a7ebf46f54dab9905f79b80f7fddb76a6">Renderer</a> ()</td></tr>
-<tr class="memdesc:a7ebf46f54dab9905f79b80f7fddb76a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class.  <a href="#a7ebf46f54dab9905f79b80f7fddb76a6">More...</a><br /></td></tr>
+<tr class="memdesc:a7ebf46f54dab9905f79b80f7fddb76a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_renderer.html" title="Class responsible for rendering scene ">Renderer</a> class.  <a href="#a7ebf46f54dab9905f79b80f7fddb76a6">More...</a><br /></td></tr>
 <tr class="separator:a7ebf46f54dab9905f79b80f7fddb76a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeee408862d5bd6255a6882d47e6d5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a> ()</td></tr>
-<tr class="memdesc:afeee408862d5bd6255a6882d47e6d5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class.  <a href="#afeee408862d5bd6255a6882d47e6d5cd">More...</a><br /></td></tr>
+<tr class="memdesc:afeee408862d5bd6255a6882d47e6d5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_renderer.html" title="Class responsible for rendering scene ">Renderer</a> class.  <a href="#afeee408862d5bd6255a6882d47e6d5cd">More...</a><br /></td></tr>
 <tr class="separator:afeee408862d5bd6255a6882d47e6d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ace03c23023902be42e3ba3863d4e2496"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#ace03c23023902be42e3ba3863d4e2496">render</a> (glm::mat4 currentMatrix, <a class="el" href="class_scene_object.html">SceneObject</a> &amp;object)</td></tr>
-<tr class="memdesc:ace03c23023902be42e3ba3863d4e2496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the specified current matrix.  <a href="#ace03c23023902be42e3ba3863d4e2496">More...</a><br /></td></tr>
+<tr class="memdesc:ace03c23023902be42e3ba3863d4e2496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders object with additional world matrix.  <a href="#ace03c23023902be42e3ba3863d4e2496">More...</a><br /></td></tr>
 <tr class="separator:ace03c23023902be42e3ba3863d4e2496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2a649bdb18af0d908932ff558cf89e1d"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a2a649bdb18af0d908932ff558cf89e1d">program</a></td></tr>
-<tr class="memdesc:a2a649bdb18af0d908932ff558cf89e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The program  <a href="#a2a649bdb18af0d908932ff558cf89e1d">More...</a><br /></td></tr>
+<tr class="memdesc:a2a649bdb18af0d908932ff558cf89e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shader program  <a href="#a2a649bdb18af0d908932ff558cf89e1d">More...</a><br /></td></tr>
 <tr class="separator:a2a649bdb18af0d908932ff558cf89e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> </p>
+<div class="textblock"><p>Class responsible for rendering scene </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7ebf46f54dab9905f79b80f7fddb76a6"></a>
 <div class="memitem">
@@ -161,7 +158,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="class_renderer.html" title="Class responsible for rendering scene ">Renderer</a> class. </p>
 
 </div>
 </div>
@@ -178,7 +175,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finalizes an instance of the <a class="el" href="class_renderer.html" title="Renderer ">Renderer</a> class. </p>
+<p>Finalizes an instance of the <a class="el" href="class_renderer.html" title="Class responsible for rendering scene ">Renderer</a> class. </p>
 
 </div>
 </div>
@@ -215,10 +212,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Renders the specified current matrix. </p>
+<p>Renders object with additional world matrix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">currentMatrix</td><td>The current matrix.</td></tr>
+    <tr><td class="paramname">currentMatrix</td><td>The world matrix.</td></tr>
     <tr><td class="paramname">object</td><td>The object.</td></tr>
   </table>
   </dd>
@@ -280,13 +277,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The program </p>
+<p>The shader program </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_renderer_8h_source.html">Renderer.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

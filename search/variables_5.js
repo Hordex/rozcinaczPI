@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['lastpos',['lastPos',['../class_slicer.html#a0a83d938169c3f70e9e783b4e0fa5dd7',1,'Slicer']]],
-  ['lookatlocked',['lookAtLocked',['../class_camera.html#a826aa87b824d412feaa8e4280297e86b',1,'Camera']]],
-  ['lookatneedsupdate',['lookAtNeedsUpdate',['../class_camera.html#a381048767cdaac817a256adb59ee4ff2',1,'Camera']]],
-  ['lookattarget',['lookAtTarget',['../class_camera.html#aaf1ca47e0054da061b69e5cb26d4439c',1,'Camera']]]
+  ['position',['position',['../class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21',1,'SceneObject']]],
+  ['program',['program',['../class_renderer.html#a2a649bdb18af0d908932ff558cf89e1d',1,'Renderer']]],
+  ['projectionmatrix',['projectionMatrix',['../class_camera.html#af080757da494dd1e4a347f527df4af9c',1,'Camera']]],
+  ['projectionneedsupdate',['projectionNeedsUpdate',['../class_camera.html#a867a20bdff1e7e4f9988dea971df75cd',1,'Camera']]]
 ];

@@ -5,6 +5,5 @@ var hierarchy =
     [ "SceneObject", "class_scene_object.html", [
       [ "Camera", "class_camera.html", null ],
       [ "Plane", "class_plane.html", null ]
-    ] ],
-    [ "Slicer", "class_slicer.html", null ]
+    ] ]
 ];

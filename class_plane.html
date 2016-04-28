@@ -49,7 +49,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -115,43 +114,41 @@ $(document).ready(function(){initNavTree('class_plane.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_plane.html" title="Plane ">Plane</a>  
+<p>Geometric <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> object  
  <a href="class_plane.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="_plane_8h_source.html">Plane.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Plane:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_plane.png" usemap="#Plane_map" alt=""/>
   <map id="Plane_map" name="Plane_map">
-<area href="class_scene_object.html" title="SceneObject " alt="SceneObject" shape="rect" coords="0,0,85,24"/>
+<area href="class_scene_object.html" title="Base class for objects displayed on scene " alt="SceneObject" shape="rect" coords="0,0,85,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7a3ab015eb46793f9b02c74916b58e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a7a3ab015eb46793f9b02c74916b58e01">render</a> (GLuint shaderProgram) override</td></tr>
-<tr class="memdesc:a7a3ab015eb46793f9b02c74916b58e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the specified shader program.  <a href="#a7a3ab015eb46793f9b02c74916b58e01">More...</a><br /></td></tr>
-<tr class="separator:a7a3ab015eb46793f9b02c74916b58e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aec8fa74baf560227bb25f63d6ee8a2cc">render</a> (unsigned shaderProgram) override</td></tr>
+<tr class="memdesc:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders with the specified shader program.  <a href="#aec8fa74baf560227bb25f63d6ee8a2cc">More...</a><br /></td></tr>
+<tr class="separator:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acac0d9c003e0ab10d07b146c3566a0c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a> ()</td></tr>
-<tr class="memdesc:acac0d9c003e0ab10d07b146c3566a0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_plane.html" title="Plane ">Plane</a> class.  <a href="#acac0d9c003e0ab10d07b146c3566a0c7">More...</a><br /></td></tr>
+<tr class="memdesc:acac0d9c003e0ab10d07b146c3566a0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class.  <a href="#acac0d9c003e0ab10d07b146c3566a0c7">More...</a><br /></td></tr>
 <tr class="separator:acac0d9c003e0ab10d07b146c3566a0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69abd86051c880dcb44b249ad10c4436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">~Plane</a> ()</td></tr>
-<tr class="memdesc:a69abd86051c880dcb44b249ad10c4436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_plane.html" title="Plane ">Plane</a> class.  <a href="#a69abd86051c880dcb44b249ad10c4436">More...</a><br /></td></tr>
+<tr class="memdesc:a69abd86051c880dcb44b249ad10c4436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class.  <a href="#a69abd86051c880dcb44b249ad10c4436">More...</a><br /></td></tr>
 <tr class="separator:a69abd86051c880dcb44b249ad10c4436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
 <tr class="memitem:a144749db2310bf8949ec1bbafeac0097 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a144749db2310bf8949ec1bbafeac0097">moveBy</a> (const glm::vec3 &amp;vector)</td></tr>
-<tr class="memdesc:a144749db2310bf8949ec1bbafeac0097 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the by.  <a href="#a144749db2310bf8949ec1bbafeac0097">More...</a><br /></td></tr>
+<tr class="memdesc:a144749db2310bf8949ec1bbafeac0097 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the object by specified vector  <a href="#a144749db2310bf8949ec1bbafeac0097">More...</a><br /></td></tr>
 <tr class="separator:a144749db2310bf8949ec1bbafeac0097 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e77e0ec381d2b9d9b3238c4e79d34df inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0e77e0ec381d2b9d9b3238c4e79d34df">setRotation</a> (const glm::vec3 &amp;rotaion)</td></tr>
-<tr class="memdesc:a0e77e0ec381d2b9d9b3238c4e79d34df inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation.  <a href="#a0e77e0ec381d2b9d9b3238c4e79d34df">More...</a><br /></td></tr>
+<tr class="memdesc:a0e77e0ec381d2b9d9b3238c4e79d34df inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation of object  <a href="#a0e77e0ec381d2b9d9b3238c4e79d34df">More...</a><br /></td></tr>
 <tr class="separator:a0e77e0ec381d2b9d9b3238c4e79d34df inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a0d268d96d77dbeb45b07a6442e2f4d0d">SceneObject</a> ()</td></tr>
-<tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
+<tr class="memdesc:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class.  <a href="#a0d268d96d77dbeb45b07a6442e2f4d0d">More...</a><br /></td></tr>
 <tr class="separator:a0d268d96d77dbeb45b07a6442e2f4d0d inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a7c67cdccd3be574032a555662c396b1b">~SceneObject</a> ()</td></tr>
-<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
+<tr class="memdesc:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a> class.  <a href="#a7c67cdccd3be574032a555662c396b1b">More...</a><br /></td></tr>
 <tr class="separator:a7c67cdccd3be574032a555662c396b1b inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -162,34 +159,34 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:afde9acf6016a6376ec010868b6ad1787"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#afde9acf6016a6376ec010868b6ad1787">normal</a></td></tr>
 <tr class="memdesc:afde9acf6016a6376ec010868b6ad1787"><td class="mdescLeft">&#160;</td><td class="mdescRight">The normals  <a href="#afde9acf6016a6376ec010868b6ad1787">More...</a><br /></td></tr>
 <tr class="separator:afde9acf6016a6376ec010868b6ad1787"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a139cb62cb08634bd7737a96e4bff9452"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a139cb62cb08634bd7737a96e4bff9452">indices</a> [6]</td></tr>
-<tr class="memdesc:a139cb62cb08634bd7737a96e4bff9452"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indices  <a href="#a139cb62cb08634bd7737a96e4bff9452">More...</a><br /></td></tr>
-<tr class="separator:a139cb62cb08634bd7737a96e4bff9452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5d2aa535379a2f6e3ff6784b26c4482"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aa5d2aa535379a2f6e3ff6784b26c4482">BOs</a> [2]</td></tr>
-<tr class="memdesc:aa5d2aa535379a2f6e3ff6784b26c4482"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Buffer Objects  <a href="#aa5d2aa535379a2f6e3ff6784b26c4482">More...</a><br /></td></tr>
-<tr class="separator:aa5d2aa535379a2f6e3ff6784b26c4482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc3c28f496cf2058d607c28ceb38af41"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#afc3c28f496cf2058d607c28ceb38af41">VAO</a></td></tr>
-<tr class="memdesc:afc3c28f496cf2058d607c28ceb38af41"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Vertex Array Object  <a href="#afc3c28f496cf2058d607c28ceb38af41">More...</a><br /></td></tr>
-<tr class="separator:afc3c28f496cf2058d607c28ceb38af41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a946b8fe52bf41a47ef43d9ece461c4"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a1a946b8fe52bf41a47ef43d9ece461c4">indices</a> [6]</td></tr>
+<tr class="memdesc:a1a946b8fe52bf41a47ef43d9ece461c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The indices  <a href="#a1a946b8fe52bf41a47ef43d9ece461c4">More...</a><br /></td></tr>
+<tr class="separator:a1a946b8fe52bf41a47ef43d9ece461c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0cc06b67e8f383950de2fcc9b567ef7"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#ab0cc06b67e8f383950de2fcc9b567ef7">BOs</a> [2]</td></tr>
+<tr class="memdesc:ab0cc06b67e8f383950de2fcc9b567ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Buffer Objects  <a href="#ab0cc06b67e8f383950de2fcc9b567ef7">More...</a><br /></td></tr>
+<tr class="separator:ab0cc06b67e8f383950de2fcc9b567ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a7a7aaf39d14283b366b6435bf44d4a5e">VAO</a></td></tr>
+<tr class="memdesc:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Vertex Array Object  <a href="#a7a7aaf39d14283b366b6435bf44d4a5e">More...</a><br /></td></tr>
+<tr class="separator:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
 <tr class="memitem:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21">position</a></td></tr>
-<tr class="memdesc:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position  <a href="#a3fc9eafe43fe119a594caa55b7afea21">More...</a><br /></td></tr>
+<tr class="memdesc:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of object  <a href="#a3fc9eafe43fe119a594caa55b7afea21">More...</a><br /></td></tr>
 <tr class="separator:a3fc9eafe43fe119a594caa55b7afea21 inherit pub_attribs_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
 <tr class="memitem:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::mat4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c">getWorldMatrix</a> ()</td></tr>
-<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix.  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
+<tr class="memdesc:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the world matrix  <a href="#a8a6d39cb8cf6600b7009d19a636c631c">More...</a><br /></td></tr>
 <tr class="separator:a8a6d39cb8cf6600b7009d19a636c631c inherit pro_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
 <tr class="memitem:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ae27376aaca87543a75b5a2cd0daf6e2f">rotation</a></td></tr>
-<tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
+<tr class="memdesc:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation of object  <a href="#ae27376aaca87543a75b5a2cd0daf6e2f">More...</a><br /></td></tr>
 <tr class="separator:ae27376aaca87543a75b5a2cd0daf6e2f inherit pro_attribs_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_plane.html" title="Plane ">Plane</a> </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_scene_object.html" title="SceneObject ">SceneObject</a></dd></dl>
+<div class="textblock"><p>Geometric <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> object </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a></dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acac0d9c003e0ab10d07b146c3566a0c7"></a>
 <div class="memitem">
@@ -204,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="class_plane.html" title="Plane ">Plane</a> class. </p>
+<p>Initializes a new instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class. </p>
 
 </div>
 </div>
@@ -221,12 +218,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finalizes an instance of the <a class="el" href="class_plane.html" title="Plane ">Plane</a> class. </p>
+<p>Finalizes an instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7a3ab015eb46793f9b02c74916b58e01"></a>
+<a class="anchor" id="aec8fa74baf560227bb25f63d6ee8a2cc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -236,7 +233,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Plane::render </td>
           <td>(</td>
-          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>shaderProgram</em></td><td>)</td>
           <td></td>
         </tr>
@@ -248,7 +245,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Renders the specified shader program. </p>
+<p>Renders with the specified shader program. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">shaderProgram</td><td>The shader program.</td></tr>
@@ -256,12 +253,12 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_scene_object.html#afc6f8647289e3fbd9e097ab06783f677">SceneObject</a>.</p>
+<p>Implements <a class="el" href="class_scene_object.html#a0e59ab140c021845d939525e9465886f">SceneObject</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa5d2aa535379a2f6e3ff6784b26c4482"></a>
+<a class="anchor" id="ab0cc06b67e8f383950de2fcc9b567ef7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -269,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GLuint Plane::BOs[2]</td>
+          <td class="memname">unsigned Plane::BOs[2]</td>
         </tr>
       </table>
   </td>
@@ -283,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a139cb62cb08634bd7737a96e4bff9452"></a>
+<a class="anchor" id="a1a946b8fe52bf41a47ef43d9ece461c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -291,7 +288,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GLuint Plane::indices[6]</td>
+          <td class="memname">unsigned Plane::indices[6]</td>
         </tr>
       </table>
   </td>
@@ -327,7 +324,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc3c28f496cf2058d607c28ceb38af41"></a>
+<a class="anchor" id="a7a7aaf39d14283b366b6435bf44d4a5e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -335,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GLuint Plane::VAO</td>
+          <td class="memname">unsigned Plane::VAO</td>
         </tr>
       </table>
   </td>
@@ -371,9 +368,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/różne/Studia/rozcinaczPI/Rozcinacz/Rozcinacz/<a class="el" href="_plane_8h_source.html">Plane.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

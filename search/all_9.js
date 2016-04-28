@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['lastpos',['lastPos',['../class_slicer.html#a0a83d938169c3f70e9e783b4e0fa5dd7',1,'Slicer']]],
-  ['loadshader',['LoadShader',['../_g_l_shader_8h.html#a916adc8d31dfc3bc9c09100462139700',1,'GLShader.h']]],
-  ['lookat',['lookAt',['../class_camera.html#ad4ad6760012b1d7fe875de6f5f86b13c',1,'Camera']]],
-  ['lookatlocked',['lookAtLocked',['../class_camera.html#a826aa87b824d412feaa8e4280297e86b',1,'Camera']]],
-  ['lookatneedsupdate',['lookAtNeedsUpdate',['../class_camera.html#a381048767cdaac817a256adb59ee4ff2',1,'Camera']]],
-  ['lookattarget',['lookAtTarget',['../class_camera.html#aaf1ca47e0054da061b69e5cb26d4439c',1,'Camera']]]
+  ['perspective',['perspective',['../class_camera.html#ac4891b0f323f538f3e4d9c30e270db2f',1,'Camera']]],
+  ['plane',['Plane',['../class_plane.html',1,'Plane'],['../class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7',1,'Plane::Plane()']]],
+  ['position',['position',['../class_scene_object.html#a3fc9eafe43fe119a594caa55b7afea21',1,'SceneObject']]],
+  ['program',['program',['../class_renderer.html#a2a649bdb18af0d908932ff558cf89e1d',1,'Renderer']]],
+  ['projectionmatrix',['projectionMatrix',['../class_camera.html#af080757da494dd1e4a347f527df4af9c',1,'Camera']]],
+  ['projectionneedsupdate',['projectionNeedsUpdate',['../class_camera.html#a867a20bdff1e7e4f9988dea971df75cd',1,'Camera']]]
 ];

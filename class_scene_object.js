@@ -4,7 +4,7 @@ var class_scene_object =
     [ "~SceneObject", "class_scene_object.html#a7c67cdccd3be574032a555662c396b1b", null ],
     [ "getWorldMatrix", "class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c", null ],
     [ "moveBy", "class_scene_object.html#a144749db2310bf8949ec1bbafeac0097", null ],
-    [ "render", "class_scene_object.html#afc6f8647289e3fbd9e097ab06783f677", null ],
+    [ "render", "class_scene_object.html#a0e59ab140c021845d939525e9465886f", null ],
     [ "setRotation", "class_scene_object.html#a0e77e0ec381d2b9d9b3238c4e79d34df", null ],
     [ "updateWorldMatrix", "class_scene_object.html#a3f728463fb39c199a68bae99ca82aaf0", null ],
     [ "children", "class_scene_object.html#a100c1dace7e4a5390f136fb6dec6c79f", null ],

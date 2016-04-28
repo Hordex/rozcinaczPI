@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['indices',['indices',['../class_plane.html#a139cb62cb08634bd7737a96e4bff9452',1,'Plane']]]
+  ['normal',['normal',['../class_plane.html#afde9acf6016a6376ec010868b6ad1787',1,'Plane']]]
 ];

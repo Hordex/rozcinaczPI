@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aa',['aa',['../class_slicer.html#a4f32807c052c33a0082dc211cb9d790a',1,'Slicer']]]
+  ['bos',['BOs',['../class_plane.html#ab0cc06b67e8f383950de2fcc9b567ef7',1,'Plane']]]
 ];
