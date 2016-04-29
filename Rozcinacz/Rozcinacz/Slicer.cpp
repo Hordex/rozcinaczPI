@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "Slicer.h"
 #include <glm/glm.hpp>
 #include <SFML/Graphics.hpp>
 #include <GL/glew.h>
@@ -7,7 +6,11 @@
 #define MAXRADIUS 5.0f
 #define MINRADIUS 3.0f
 #define MAGICNUMBERS ((MAXRADIUS + 1.0f) / ((float)width) / (MAXRADIUS + 1.0f - r))
+#include "Slicer.h"
 #include "Renderer.h"
+#include "Camera.h"
+#include "Scene.h"
+#include "Graph.h"
 
 bool Slicer::eventHandler()
 {
@@ -99,7 +102,8 @@ Slicer::Slicer()
 	r = MINRADIUS;
 	Renderer renderer;
 
-	Scene scene;
+	Graph graph(6);
+	Scene scene(graph);
 
 	Camera cam(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
 	calculateCameraPosition(cam);
@@ -117,7 +121,7 @@ Slicer::Slicer()
 		}
 		if(newAspectRatio)
 		{
-			cam.perspective(75.0f, width, height, 0.1f, 1000.0f);
+			cam.perspective(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
 			newAspectRatio = false;
 		}
 

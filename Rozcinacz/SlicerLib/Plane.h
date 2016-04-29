@@ -28,7 +28,9 @@ class Plane :
 	/// The Vertex Array Object
 	/// </summary>
 	unsigned VAO;
+	int index;
 public:
+	int Index() const;
 	/// <summary>
 	/// Renders with the specified shader program.
 	/// </summary>
@@ -37,7 +39,7 @@ public:
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Plane"/> class.
 	/// </summary>
-	Plane();
+	Plane(int index);
 	/// <summary>
 	/// Finalizes an instance of the <see cref="Plane"/> class.
 	/// </summary>

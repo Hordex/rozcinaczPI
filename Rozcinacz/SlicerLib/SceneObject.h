@@ -2,7 +2,6 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
-//#include <GL/glew.h>
 
 /// <summary>
 /// Base class for objects displayed on scene
@@ -10,11 +9,11 @@
 class SceneObject
 {
 	/// <summary>
-	/// The children
+	/// Collection of objects placed in model space of this object
 	/// </summary>
 	std::vector<SceneObject*> children;
 	/// <summary>
-	/// The world matrix
+	/// The world matrix or model matrix
 	/// </summary>
 	glm::mat4 worldMatrix;
 	/// <summary>
@@ -33,7 +32,7 @@ protected:
 	/// <summary>
 	/// Gets the world matrix
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>  </returns>
 	glm::mat4& getWorldMatrix();
 public:
 	/// <summary>

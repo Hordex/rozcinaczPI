@@ -1,7 +1,8 @@
 #pragma once
-#include "SceneObject.h"
 #include <list>
-#include "Plane.h"
+
+class Graph;
+class Plane;
 
 /// <summary>
 /// Class holding all objects to be rendered
@@ -12,6 +13,7 @@ public:
 	/// <summary>
 	/// Defaults the scene.
 	/// </summary>
+	void defaultScene(Graph& graph);
 	void defaultScene();
 	/// <summary>
 	/// The children
@@ -26,6 +28,8 @@ public:
 	/// Initializes a new instance of the <see cref="Scene"/> class.
 	/// </summary>
 	Scene();
+	Scene(Graph& graph);
+	void Clear();
 	/// <summary>
 	/// Finalizes an instance of the <see cref="Scene"/> class.
 	/// </summary>

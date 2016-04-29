@@ -1,6 +1,11 @@
 #include "Plane.h"
 #include <GL/glew.h>
 
+int Plane::Index() const
+{
+	return index;
+}
+
 void Plane::render(unsigned shaderProgram)
 {
 	GLint worldmatrixLocation = glGetUniformLocation(shaderProgram, "worldMatrix");
@@ -12,8 +17,9 @@ void Plane::render(unsigned shaderProgram)
 	glBindVertexArray(0);
 }
 
-Plane::Plane()
+Plane::Plane(int index)
 {
+	this->index = index;
 	vertices[0] = glm::vec3(1.0f, 0.0f, 1.0f);  // Top Right
 	vertices[1] = glm::vec3(1.0f, 0.0f, -1.0f);  // Bottom Right
 	vertices[2] = glm::vec3(-1.0f, 0.0f, -1.0f);  // Bottom Left

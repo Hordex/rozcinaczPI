@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Slicer
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Mesh slicing visualization</div>
   </td>
@@ -128,12 +128,14 @@ Inheritance diagram for Plane:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0fbd40a72b7551d8a7b2ceb8464af072"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a0fbd40a72b7551d8a7b2ceb8464af072">Index</a> () const </td></tr>
+<tr class="separator:a0fbd40a72b7551d8a7b2ceb8464af072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aec8fa74baf560227bb25f63d6ee8a2cc">render</a> (unsigned shaderProgram) override</td></tr>
 <tr class="memdesc:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders with the specified shader program.  <a href="#aec8fa74baf560227bb25f63d6ee8a2cc">More...</a><br /></td></tr>
 <tr class="separator:aec8fa74baf560227bb25f63d6ee8a2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac0d9c003e0ab10d07b146c3566a0c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#acac0d9c003e0ab10d07b146c3566a0c7">Plane</a> ()</td></tr>
-<tr class="memdesc:acac0d9c003e0ab10d07b146c3566a0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class.  <a href="#acac0d9c003e0ab10d07b146c3566a0c7">More...</a><br /></td></tr>
-<tr class="separator:acac0d9c003e0ab10d07b146c3566a0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c0304fdbed22979d17cce1469d5d86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a97c0304fdbed22979d17cce1469d5d86">Plane</a> (int <a class="el" href="class_plane.html#adc22d323ec7914851c490c702e1c6f69">index</a>)</td></tr>
+<tr class="memdesc:a97c0304fdbed22979d17cce1469d5d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class.  <a href="#a97c0304fdbed22979d17cce1469d5d86">More...</a><br /></td></tr>
+<tr class="separator:a97c0304fdbed22979d17cce1469d5d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69abd86051c880dcb44b249ad10c4436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a69abd86051c880dcb44b249ad10c4436">~Plane</a> ()</td></tr>
 <tr class="memdesc:a69abd86051c880dcb44b249ad10c4436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes an instance of the <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> class.  <a href="#a69abd86051c880dcb44b249ad10c4436">More...</a><br /></td></tr>
 <tr class="separator:a69abd86051c880dcb44b249ad10c4436"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +170,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a7a7aaf39d14283b366b6435bf44d4a5e">VAO</a></td></tr>
 <tr class="memdesc:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Vertex Array Object  <a href="#a7a7aaf39d14283b366b6435bf44d4a5e">More...</a><br /></td></tr>
 <tr class="separator:a7a7aaf39d14283b366b6435bf44d4a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc22d323ec7914851c490c702e1c6f69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#adc22d323ec7914851c490c702e1c6f69">index</a></td></tr>
+<tr class="separator:adc22d323ec7914851c490c702e1c6f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -188,14 +192,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Geometric <a class="el" href="class_plane.html" title="Geometric Plane object ">Plane</a> object </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_scene_object.html" title="Base class for objects displayed on scene ">SceneObject</a></dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acac0d9c003e0ab10d07b146c3566a0c7"></a>
+<a class="anchor" id="a97c0304fdbed22979d17cce1469d5d86"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Plane::Plane </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -223,6 +228,21 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0fbd40a72b7551d8a7b2ceb8464af072"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Plane::Index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aec8fa74baf560227bb25f63d6ee8a2cc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -277,6 +297,26 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The Buffer Objects </p>
+
+</div>
+</div>
+<a class="anchor" id="adc22d323ec7914851c490c702e1c6f69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Plane::index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

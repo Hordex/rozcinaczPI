@@ -1,6 +1,9 @@
+#include <glm/glm.hpp>
 #include "Renderer.h"
-#include <GL/glew.h>
 #include "GLShader.h"
+#include "Scene.h"
+#include "Camera.h"
+#include "Plane.h"
 
 
 void Renderer::render(glm::mat4 currentMatrix, SceneObject& object)

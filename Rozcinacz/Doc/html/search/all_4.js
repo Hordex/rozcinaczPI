@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getviewprojectionmatrix',['getViewProjectionMatrix',['../class_camera.html#a6ac3fe23cbb174ecdc833e3d34ce18ab',1,'Camera']]],
-  ['getworldmatrix',['getWorldMatrix',['../class_scene_object.html#a8a6d39cb8cf6600b7009d19a636c631c',1,'SceneObject']]]
+  ['edgeref',['EdgeRef',['../class_graph.html#addca93bdd33d94e653534c953dd4cf36',1,'Graph']]],
+  ['ends',['ends',['../class_graph_edge.html#a632023f107bb5e6e6e41433c2930f3b7',1,'GraphEdge']]]
 ];

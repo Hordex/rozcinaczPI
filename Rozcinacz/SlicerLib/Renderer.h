@@ -1,8 +1,9 @@
 #pragma once
 #include <GL/glew.h>
-#include "Scene.h"
-#include "Camera.h"
-
+#include <glm/fwd.hpp>
+class SceneObject;
+class Camera;
+class Scene;
 /// <summary>
 /// Class responsible for rendering scene
 /// </summary>

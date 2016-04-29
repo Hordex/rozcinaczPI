@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "Graph", "class_graph.html", null ],
+    [ "GraphEdge", "class_graph_edge.html", null ],
+    [ "GraphNode", "class_graph_node.html", null ],
     [ "Renderer", "class_renderer.html", null ],
     [ "Scene", "class_scene.html", null ],
     [ "SceneObject", "class_scene_object.html", [

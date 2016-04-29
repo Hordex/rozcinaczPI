@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bos',['BOs',['../class_plane.html#ab0cc06b67e8f383950de2fcc9b567ef7',1,'Plane']]]
+  ['adjacencyvector',['adjacencyVector',['../class_graph.html#a46524a6afa3ccf0c5e6412a427725abf',1,'Graph']]]
 ];

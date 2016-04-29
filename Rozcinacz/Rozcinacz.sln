@@ -7,6 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rozcinacz", "Rozcinacz\Rozc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlicerLib", "SlicerLib\SlicerLib.vcxproj", "{52A06F3A-740A-46F1-AB37-39E87A8CC4A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2F96CD73-77FA-4A0C-B575-21C84CF7FF1E}"
+	ProjectSection(SolutionItems) = preProject
+		Common\easylogging++.h = Common\easylogging++.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
