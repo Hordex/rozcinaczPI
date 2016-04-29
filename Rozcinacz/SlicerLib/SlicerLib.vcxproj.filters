@@ -57,9 +57,6 @@
     <ClCompile Include="GraphEdge.cpp">
       <Filter>Source Files\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="EdgeState.cpp">
-      <Filter>Source Files\Graph</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">

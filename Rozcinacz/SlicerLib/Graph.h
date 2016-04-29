@@ -25,6 +25,8 @@ class Graph
 	/// </summary>
 	int size;
 public:
+	void Analyze(int i);
+	void LockEdge(int from, int to);
 	/// <summary>
 	/// Associates index with plane
 	/// </summary>
@@ -37,7 +39,6 @@ public:
 	/// </summary>
 	/// <returns>Size of the graph</returns>
 	int Size() const;
-
 	/// <summary>
 	/// Checks if to vertices are connected.
 	/// </summary>

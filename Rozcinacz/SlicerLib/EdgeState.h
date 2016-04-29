@@ -1,5 +1,5 @@
 #pragma once
-#include <iosfwd>
+#include <ostream>
 
 /// <summary>
 /// Enum for edge states
@@ -20,4 +20,17 @@ enum EdgeState
 	Deleted
 };
 
-std::ostream& operator<<(std::ostream & os, EdgeState const state);
+inline std::ostream& operator<<(std::ostream & os, EdgeState const state)
+{
+	switch (state) {
+	case Free:
+		os << "Free";
+		break;
+	case Locked:
+		os << "Locked";
+		break;
+	case Deleted:
+		os << "Deleted";
+	}
+	return os;
+}
