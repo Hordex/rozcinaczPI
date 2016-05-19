@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
-
+#include <glm/fwd.hpp>
+class SceneObject;
 class Graph;
 class Plane;
 
@@ -10,6 +11,9 @@ class Plane;
 class Scene
 {
 public:
+	SceneObject* CastRay(glm::vec3 origin, glm::vec3 direction);
+	void CreateFaces(Graph& graph);
+	void CreateEdges(Graph& graph);
 	/// <summary>
 	/// Defaults the scene.
 	/// </summary>
@@ -18,17 +22,12 @@ public:
 	/// <summary>
 	/// The children
 	/// </summary>
-	std::list<Plane*> children;
+	std::list<SceneObject*> children;
 	/// <summary>
 	/// Adds a child.
 	/// </summary>
 	/// <param name="child">A child.</param>
-	void addChild(Plane* child);
-	/// <summary>s
-	/// Initializes a new instance of the <see cref="Scene"/> class.
-	/// </summary>
-	Scene();
-	Scene(Graph& graph);
+	void addChild(SceneObject* child);
 	void Clear();
 	/// <summary>
 	/// Finalizes an instance of the <see cref="Scene"/> class.

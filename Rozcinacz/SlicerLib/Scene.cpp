@@ -1,102 +1,77 @@
+#include "Cube.h"
 #include "Scene.h"
 #include "Plane.h"
 #include "Graph.h"
 #include <easylogging++.h>
+#include "Collider.h"
 
-void Scene::defaultScene(Graph& graph)
+SceneObject* Scene::CastRay(glm::vec3 origin, glm::vec3 direction)
 {
-	Clear();
-	bool graphflag = graph.Size() == 6;
-
-	int adjacencies[][4] = {
-		{ 2,3,4,5 },
-		{ 2,3,4,5 },
-		{ 0,1,4,5 },
-		{ 0,1,4,5 },
-		{ 0,1,2,3 },
-		{ 0,1,2,3 }
-	};
-
-	glm::vec3 pos[] = {
-		glm::vec3(1.0f, 0.0f, 0.0f),
-		glm::vec3(-1.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f),
-		glm::vec3(0.0f, -1.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, 1.0f),
-		glm::vec3(0.0f, 0.0f, -1.0f)
-	};
-
-	glm::vec3 rot[] = {
-		glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-		glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(glm::radians(90.0f), 0.0f, 0.0f),
-		glm::vec3(glm::radians(90.0f), 0.0f, 0.0f)
-	};
-	Plane* p;
-
-	for (int i = 0; i < 6; ++i)
+	SceneObject* ret = nullptr;
+	float minDistance = 99999;
+	float distance = minDistance;
+	for (SceneObject* object : children)
 	{
-		p = new Plane(i);
-		p->moveBy(pos[i]);
-		p->setRotation(rot[i]);
-		addChild(p);
-		if(graphflag)
+		if (object->TestRayOBBIntersection(origin, direction, distance))
 		{
-			graph.GetNode(i).SetPlane(p);
-			for (int j = 0; j < 4;++j)
+			if(distance < minDistance)
 			{
-				graph.ConnectVertices(i, adjacencies[i][j]);
+				minDistance = distance;
+				ret = object;
+			}
+		}
+	}
+	return ret;
+}
+
+void Scene::CreateFaces(Graph& graph)
+{
+	bool graphflag = graph.Size() == 6;
+	Plane* p;
+	for (int i = 0; i < cube::End; ++i)
+	{
+		LOG(TRACE) << "Creating face " << i;
+		p = new Plane(i);
+		p->moveBy(cube::GetFacePosition(static_cast<cube::Side>(i)));
+		p->setRotation(cube::GetFaceRotation(static_cast<cube::Side>(i)));
+		addChild(p);
+		if (graphflag)
+			graph.GetNode(i).SetPlane(p);
+	}
+}
+
+void Scene::CreateEdges(Graph& graph)
+{
+	bool graphflag = graph.Size() == 6;
+	Collider* c;
+	int count = 0;
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = i - i%2 + 2; j < cube::End; ++j)
+		{
+			LOG(TRACE) << "Creating " << ++count << " collider " << i << " " << j;
+			c = new Collider();
+			c->moveBy(cube::GetEdgePosition(static_cast<cube::Side>(i), static_cast<cube::Side>(j)));
+			c->setRotation(cube::GetEdgeRotation(static_cast<cube::Side>(i), static_cast<cube::Side>(j)));
+			addChild(c);
+			if (graphflag)
+			{
+				graph.ConnectVertices(i, j);
 			}
 		}
 	}
 }
 
-void Scene::defaultScene()
+void Scene::defaultScene(Graph& graph)
 {
 	Clear();
-	glm::vec3 pos[] = {
-		glm::vec3(1.0f, 0.0f, 0.0f),
-		glm::vec3(-1.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f),
-		glm::vec3(0.0f, -1.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, 1.0f),
-		glm::vec3(0.0f, 0.0f, -1.0f)
-	};
-
-	glm::vec3 rot[] = {
-		glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-		glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(0.0f, 0.0f, 0.0f),
-		glm::vec3(glm::radians(90.0f), 0.0f, 0.0f),
-		glm::vec3(glm::radians(90.0f), 0.0f, 0.0f)
-	};
-	Plane* p;
-
-	for (int i = 0; i < 6; ++i)
-	{
-		p = new Plane(i);
-		p->moveBy(pos[i]);
-		p->setRotation(rot[i]);
-		addChild(p);
-	}
+	CreateFaces(graph);
+	CreateEdges(graph);
 }
 
-void Scene::addChild(Plane* child)
+void Scene::addChild(SceneObject* child)
 {
 	children.push_front(child);
-}
-
-Scene::Scene()
-{
-	defaultScene();
-}
-
-Scene::Scene(Graph& graph)
-{
-	defaultScene(graph);
 }
 
 void Scene::Clear()

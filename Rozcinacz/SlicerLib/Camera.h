@@ -9,7 +9,7 @@ class Camera :
 	public SceneObject
 {
 	/// <summary>
-	/// The projection matrix
+	/// The perspective projection matrix
 	/// </summary>
 	glm::mat4 projectionMatrix;
 	/// <summary>
@@ -23,11 +23,11 @@ class Camera :
 	/// <summary>
 	/// The projection has changed
 	/// </summary>
-	bool projectionNeedsUpdate;
+	bool projectionIsDirty;
 	/// <summary>
 	/// The view needs has changed
 	/// </summary>
-	bool viewNeedsUpdate;
+	bool viewIsDirty;
 	/// <summary>
 	/// Is the lookAt target locked
 	/// </summary>
@@ -45,6 +45,15 @@ class Camera :
 	/// </summary>
 	void refreshLookAt();
 public:
+
+	glm::vec3 getAABBMin() override { return glm::zero<glm::vec3>(); }
+	glm::vec3 getAABBMax() override { return glm::zero<glm::vec3>(); }
+	void ScreenPosToWorldRay(
+	int mouseX, int mouseY,             // Mouse position, in pixels, from bottom-left corner of the window
+	int screenWidth, int screenHeight,  // Window size, in pixels
+	glm::vec3& out_origin,              // Ouput : Origin of the ray. /!\ Starts at the near plane, so if you want the ray to start at the camera's position instead, ignore this.
+	glm::vec3& out_direction            // Ouput : Direction, in world space, of the ray that goes "through" the mouse.
+	);
 	/// <summary>
 	/// Gets the projection*view matrix.
 	/// </summary>

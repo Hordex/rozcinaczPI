@@ -12,6 +12,24 @@
 #include "Scene.h"
 #include "Graph.h"
 
+void Slicer::UpdateMouseUI(int mouse_x, int mouse_y)
+{
+	SceneObject* nextObjectUnderMouse = nullptr;
+	glm::vec3 origin, direction;
+	mainCamera.ScreenPosToWorldRay(mouse_x, mouse_y, width, height, origin, direction);
+	nextObjectUnderMouse = mainScene.CastRay(origin, direction);
+	if(nextObjectUnderMouse)
+	{
+		if(objectUnderMouse != nextObjectUnderMouse)
+		{
+			if (objectUnderMouse)objectUnderMouse->MouseLeave();
+			nextObjectUnderMouse->MouseEnter();
+		}
+	}
+	else if (objectUnderMouse)objectUnderMouse->MouseLeave();
+	objectUnderMouse = nextObjectUnderMouse;
+}
+
 bool Slicer::eventHandler()
 {
 	sf::Event event;
@@ -63,6 +81,7 @@ bool Slicer::eventHandler()
 				lastPos[0] = event.mouseMove.x;
 				lastPos[1] = event.mouseMove.y;
 			}
+			UpdateMouseUI(event.mouseMove.x, event.mouseMove.y);
 			break;
 			//case sf::Event::MouseEntered: break;
 			//case sf::Event::MouseLeft: break;
@@ -94,21 +113,21 @@ void Slicer::calculateCameraPosition(class Camera& camera) const
 	camera.moveTo(ret);
 }
 
-Slicer::Slicer()
+Slicer::Slicer():mainCamera(75.0f, 800, 600, 0.1f, 1000.0f),mainGraph(6)
 {
+	objectUnderMouse = nullptr;
+	width = 800;
+	height = 600;
 	// create the window
 	window = new sf::Window(sf::VideoMode(width, height), "OpenGL", sf::Style::Default, sf::ContextSettings(32, 0, 16));
 	window->setVerticalSyncEnabled(true);
 	r = MINRADIUS;
 	Renderer renderer;
 
-	Graph graph(6);
-	Scene scene(graph);
-
-	Camera cam(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
-	calculateCameraPosition(cam);
-	cam.lookAt(glm::vec3(0, 0, 0));
-	cam.setLookAtLock(true);
+	mainScene.defaultScene(mainGraph);
+	calculateCameraPosition(mainCamera);
+	mainCamera.lookAt(glm::vec3(0, 0, 0));
+	mainCamera.setLookAtLock(true);
 
 	// run the main loop
 	while (window->isOpen() && eventHandler())
@@ -116,25 +135,22 @@ Slicer::Slicer()
 		// handle events
 		if (newCam)
 		{
-			calculateCameraPosition(cam);
+			calculateCameraPosition(mainCamera);
 			newCam = false;
 		}
 		if(newAspectRatio)
 		{
-			cam.perspective(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
+			mainCamera.perspective(75.0f, (float)width, (float)height, 0.1f, 1000.0f);
 			newAspectRatio = false;
 		}
 
 		// clear the buffers
 		
-		renderer.render(scene, cam);
+		renderer.render(mainScene, mainCamera);
 
 		// end the current frame (internally swaps the front and back buffers)
 		window->display();
 	}
-
-	// release resources...
-
 }
 
 

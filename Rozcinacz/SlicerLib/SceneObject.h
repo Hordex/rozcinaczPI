@@ -35,6 +35,16 @@ protected:
 	/// <returns>  </returns>
 	glm::mat4& getWorldMatrix();
 public:
+	virtual glm::vec3 getAABBMin() = 0;
+	virtual glm::vec3 getAABBMax() = 0;
+	virtual void MouseEnter() {}
+	virtual void MouseLeave() {}
+	virtual void MouseClick() {}
+	virtual bool TestRayOBBIntersection(
+		glm::vec3 rayOrigin,
+		glm::vec3 rayDirection,     // Ray direction (NOT target position!), in world space. Must be normalize()'d.
+		float& intersection_distance // Output : distance between ray_origin and the intersection with the OBB
+		);
 	/// <summary>
 	/// The position of object
 	/// </summary>

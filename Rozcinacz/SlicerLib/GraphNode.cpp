@@ -23,7 +23,8 @@ int GraphNode::Index() const
 	return index;
 }
 
-GraphNode::GraphNode(Plane* plane): index(0) {
+GraphNode::GraphNode(Plane* plane): index(0)
+{
 	LOG(TRACE) << "Creating GraphNode " << (plane ? " with plane" : " without plane");
 	planeRef = plane;
 }

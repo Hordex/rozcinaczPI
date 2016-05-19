@@ -3,6 +3,9 @@
 #define DIFFUSE 0.5
 
 layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
+in float ambient;
+in float diffuse;
 
 uniform mat4 worldMatrix;
 uniform mat4 viewProjectionMatrix;
@@ -17,7 +20,7 @@ void main()
 	vec3 direction = normalize(-cameraLocation);
 
 	float diff = dot(transformedNormal,direction);
-	vertexColor =  vec3(1.0f, 0.5f, 0.2f) * (AMBIENT + DIFFUSE * clamp(max(diff,-diff), 0,1));
+	vertexColor =  color * (ambient + diffuse * clamp(max(diff,-diff), 0,1));
 
     gl_Position =  viewProjectionMatrix * worldMatrix *vec4(position, 1.0);
 }

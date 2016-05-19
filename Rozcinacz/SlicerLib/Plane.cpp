@@ -1,5 +1,15 @@
 #include "Plane.h"
 #include <GL/glew.h>
+#include "MaterialInstances.h"
+
+glm::vec3 Plane::getAABBMin()
+{
+	return glm::vec3(-1.0f, 0, -1.0f);
+}
+glm::vec3 Plane::getAABBMax()
+{
+	return glm::vec3(1.0f, 0, 1.0f);
+}
 
 int Plane::Index() const
 {
@@ -10,10 +20,14 @@ void Plane::render(unsigned shaderProgram)
 {
 	GLint worldmatrixLocation = glGetUniformLocation(shaderProgram, "worldMatrix");
 	GLint normalLocation = glGetUniformLocation(shaderProgram, "normal");
+	material->UseMaterial(shaderProgram);
+
 	glUniformMatrix4fv(worldmatrixLocation, 1, GL_FALSE, &(getWorldMatrix()[0][0]));
-	glUniform3fv(normalLocation,1,&normal[0]);
+	glUniform3fv(normalLocation, 1, &normal[0]);
+
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
 	glBindVertexArray(0);
 }
 
@@ -23,7 +37,7 @@ Plane::Plane(int index)
 	vertices[0] = glm::vec3(1.0f, 0.0f, 1.0f);  // Top Right
 	vertices[1] = glm::vec3(1.0f, 0.0f, -1.0f);  // Bottom Right
 	vertices[2] = glm::vec3(-1.0f, 0.0f, -1.0f);  // Bottom Left
-	vertices[3] = glm::vec3(-1.0f, 0.0f, 1.0f);
+	vertices[3] = glm::vec3(-1.0f, 0.0f, 1.0f);		//Top Left
 	normal = glm::vec3(0, 1, 0);
 	//vertices[0] = glm::vec3(1.0f,   1.0f,0.0f);  // Top Right
 	//vertices[1] = glm::vec3(1.0f,  -1.0f,0.0f);  // Bottom Right
@@ -31,11 +45,11 @@ Plane::Plane(int index)
 	//vertices[3] = glm::vec3(-1.0f,  1.0f,0.0f);
 	indices[0] = 0;
 	indices[1] = 1;
-	indices[2] = 3;
-	indices[3] = 1;
-	indices[4] = 2;
-	indices[5] = 3;
-
+	indices[2] = 2;
+	indices[3] = 2;
+	indices[4] = 3;
+	indices[5] = 0;
+	material = &materials::faces::normal;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(2, BOs);
 	// Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).

@@ -38,6 +38,7 @@ Renderer::Renderer()
 	// load resources, initialize the OpenGL states, ...
 	program = LoadShader("test.vert", "test.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glPolygonOffset(0.f,0.5f);
 }
 
 

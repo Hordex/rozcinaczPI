@@ -2,6 +2,10 @@
 //#include <glm/glm.hpp>
 #define _USE_MATH_DEFINES
 #include "math.h"
+#include <Scene.h>
+#include <Camera.h>
+#include <Graph.h>
+
 namespace sf
 {
 	class Window;
@@ -11,6 +15,10 @@ namespace sf
 /// </summary>
 class Slicer
 {
+	Scene mainScene;
+	Camera mainCamera;
+	Graph mainGraph;
+	void UpdateMouseUI(int mouse_x, int mouse_y);
 	/// <summary>
 	/// Handles events.
 	/// </summary>
@@ -43,11 +51,11 @@ class Slicer
 	/// <summary>
 	/// The width
 	/// </summary>
-	int width = 800;
+	int width;
 	/// <summary>
 	/// The height
 	/// </summary>
-	int height = 600;
+	int height;
 	/// <summary>
 	/// The pa
 	/// </summary>
@@ -61,6 +69,7 @@ class Slicer
 	/// </summary>
 	/// <returns></returns>
 	void calculateCameraPosition(class Camera& camera) const;
+	SceneObject* objectUnderMouse;
 public:
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Slicer"/> class.

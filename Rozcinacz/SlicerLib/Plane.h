@@ -1,5 +1,6 @@
 #pragma once
 #include "SceneObject.h"
+#include "Material.h"
 
 /// <summary>
 /// Geometric Plane object
@@ -16,6 +17,7 @@ class Plane :
 	/// The normals
 	/// </summary>
 	glm::vec3 normal;
+	Material* material;
 	/// <summary>
 	/// The indices
 	/// </summary>
@@ -30,6 +32,9 @@ class Plane :
 	unsigned VAO;
 	int index;
 public:
+
+	glm::vec3 getAABBMin() override;
+	glm::vec3 getAABBMax() override;
 	int Index() const;
 	/// <summary>
 	/// Renders with the specified shader program.

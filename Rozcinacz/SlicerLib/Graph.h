@@ -7,8 +7,8 @@
 class Plane;
 
 /// <summary>
-/// A graph
-/// </summary>
+///A graph
+///</summary>
 class Graph
 {
 	typedef std::pair<int, EdgeState> EdgeRef;
