@@ -49,14 +49,15 @@ void Scene::CreateEdges(Graph& graph)
 	{
 		for (int j = i - i%2 + 2; j < cube::End; ++j)
 		{
-			LOG(TRACE) << "Creating " << ++count << " collider " << i << " " << j;
+			LOG(TRACE) << "Creating collider " << count++ << ", " << i << " - " << j;
 			c = new Collider();
+			c->SetConnection(i,j);
 			c->moveBy(cube::GetEdgePosition(static_cast<cube::Side>(i), static_cast<cube::Side>(j)));
 			c->setRotation(cube::GetEdgeRotation(static_cast<cube::Side>(i), static_cast<cube::Side>(j)));
 			addChild(c);
 			if (graphflag)
 			{
-				graph.ConnectVertices(i, j);
+				graph.ConnectVertices(i, j,c);
 			}
 		}
 	}

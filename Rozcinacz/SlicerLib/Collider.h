@@ -28,11 +28,12 @@ public:
 	glm::vec3 getAABBMax() override;
 	void MouseEnter() override;
 	void MouseLeave() override;
-	void MouseClick() override;
+	bool MouseClick(int& from, int& to) override;
+	void Cut();
 	bool TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance) override;
 	void Lock();
 	void UnLock();
-	void SetConnection(int[]);
+	void SetConnection(int,int);
 	int* GetConnection();
 	void render(unsigned shaderProgram) override;
 	Collider();

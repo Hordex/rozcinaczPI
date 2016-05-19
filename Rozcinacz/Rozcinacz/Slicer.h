@@ -19,6 +19,7 @@ class Slicer
 	Camera mainCamera;
 	Graph mainGraph;
 	void UpdateMouseUI(int mouse_x, int mouse_y);
+	void MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y);
 	/// <summary>
 	/// Handles events.
 	/// </summary>

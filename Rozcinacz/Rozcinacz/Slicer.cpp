@@ -30,6 +30,26 @@ void Slicer::UpdateMouseUI(int mouse_x, int mouse_y)
 	objectUnderMouse = nextObjectUnderMouse;
 }
 
+void Slicer::MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y)
+{
+	int from, to;
+	if (button == sf::Mouse::Right)
+	{
+		mouseDown = true;
+	}
+	if (button == sf::Mouse::Left)
+	{
+		if (objectUnderMouse)
+		{
+			if (objectUnderMouse->MouseClick(from, to))
+				mainGraph.CutEdge(from, to);
+			UpdateMouseUI(mouse_x, mouse_y);
+		}
+	}
+	lastPos[0] = mouse_x;
+	lastPos[1] = mouse_y;
+}
+
 bool Slicer::eventHandler()
 {
 	sf::Event event;
@@ -60,9 +80,7 @@ bool Slicer::eventHandler()
 			break;
 			//case sf::Event::MouseWheelScrolled: break;
 		case sf::Event::MouseButtonPressed:
-			mouseDown = true;
-			lastPos[0] = event.mouseButton.x;
-			lastPos[1] = event.mouseButton.y;
+			MousePressed(event.mouseButton.button, event.mouseButton.x, event.mouseButton.y);
 			break;
 		case sf::Event::MouseButtonReleased:
 			mouseDown = false;

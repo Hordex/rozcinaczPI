@@ -5,13 +5,15 @@
 #include "GraphNode.h"
 
 class Plane;
+class Collider;
 
 /// <summary>
 ///A graph
 ///</summary>
 class Graph
 {
-	typedef std::pair<int, EdgeState> EdgeRef;
+	typedef std::tuple<int, EdgeState,Collider*> EdgeRef;
+	
 	/// <summary>
 	/// The adjacency vector
 	/// </summary>
@@ -27,6 +29,7 @@ class Graph
 public:
 	void Analyze(int i);
 	void LockEdge(int from, int to);
+	void UnLockEdge(int from, int to);
 	/// <summary>
 	/// Associates index with plane
 	/// </summary>
@@ -52,7 +55,7 @@ public:
 	/// <param name="from">From vertex.</param>
 	/// <param name="to">To vertex.</param>
 	/// <returns>True if vertices are connected. False otherwise. Vertex cannot be connected to itself</returns>
-	bool ConnectVertices(int from, int to);
+	bool ConnectVertices(int from, int to, Collider* collider);
 	/// <summary>
 	/// Gets the node.
 	/// </summary>

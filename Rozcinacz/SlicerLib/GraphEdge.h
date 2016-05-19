@@ -6,6 +6,7 @@
 /// </summary>
 class GraphEdge
 {
+	class Collider* collider;
 	/// <summary>
 	/// The state of  <see cref="GraphEdge" />
 	/// </summary>
@@ -18,13 +19,14 @@ public:
 	int From() const;
 	int To() const;
 	EdgeState State() const;
+	class Collider* CubeEdge() const;
 	/// <summary>
 	/// Initializes a new instance of the <see cref="GraphEdge" /> class.
 	/// </summary>
 	/// <param name="from">From vertex.</param>
 	/// <param name="to">To vertex.</param>
 	/// <param name="state">State of the edge.</param>
-	GraphEdge(int from, int to, EdgeState state);
+	GraphEdge(int from, int to, EdgeState state, class Collider* collider);
 	/// <summary>
 	/// Finalizes an instance of the <see cref="GraphEdge"/> class.
 	/// </summary>

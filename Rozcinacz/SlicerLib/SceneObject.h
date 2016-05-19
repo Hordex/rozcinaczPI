@@ -39,7 +39,7 @@ public:
 	virtual glm::vec3 getAABBMax() = 0;
 	virtual void MouseEnter() {}
 	virtual void MouseLeave() {}
-	virtual void MouseClick() {}
+	virtual bool MouseClick(int& from, int& to) { return false; }
 	virtual bool TestRayOBBIntersection(
 		glm::vec3 rayOrigin,
 		glm::vec3 rayDirection,     // Ray direction (NOT target position!), in world space. Must be normalize()'d.

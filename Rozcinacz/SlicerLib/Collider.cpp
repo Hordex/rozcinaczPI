@@ -23,7 +23,15 @@ void Collider::MouseLeave()
 	material = &materials::edges::normal;
 }
 
-void Collider::MouseClick()
+bool Collider::MouseClick(int& from, int& to)
+{
+	Cut();
+	from = connection[0];
+	to = connection[1];
+	return true;
+}
+
+void Collider::Cut()
 {
 	isCut = true;
 }
@@ -46,10 +54,10 @@ void Collider::UnLock()
 	material = &materials::edges::normal;
 }
 
-void Collider::SetConnection(int nodes[])
+void Collider::SetConnection(int from,int to)
 {
-	connection[0] = nodes[0];
-	connection[1] = nodes[1];
+	connection[0] = from;
+	connection[1] = to;
 }
 
 int* Collider::GetConnection()
