@@ -2,6 +2,11 @@
 #include <easylogging++.h>
 #include "GraphNode.h"
 
+Plane* GraphNode::GetPlane()
+{
+	return planeRef;
+}
+
 void GraphNode::SetPlane(Plane* plane)
 {
 	if(!plane)LOG(WARNING) << "Plane is null. Was it intended?";

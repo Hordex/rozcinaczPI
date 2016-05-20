@@ -32,6 +32,7 @@ class Graph
 	std::list<GraphEdge*> Analyze(int i);
 public:
 	bool Undo();
+	void Attach(int from, EdgeRef to);
 	void LockEdge(int from, int to);
 	void RestoreEdge(int from, int to);
 	/// <summary>

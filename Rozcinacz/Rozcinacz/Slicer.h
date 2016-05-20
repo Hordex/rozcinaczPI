@@ -20,6 +20,7 @@ class Slicer
 	Graph mainGraph;
 	void UpdateMouseUI(int mouse_x, int mouse_y);
 	void MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y);
+	void Reset();
 	/// <summary>
 	/// Handles events.
 	/// </summary>

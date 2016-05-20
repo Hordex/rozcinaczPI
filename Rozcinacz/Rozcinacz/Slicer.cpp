@@ -49,6 +49,13 @@ void Slicer::MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y)
 	lastPos[1] = mouse_y;
 }
 
+void Slicer::Reset()
+{
+	objectUnderMouse = nullptr;
+	mainGraph.ClearAll();
+	mainScene.defaultScene(mainGraph);
+}
+
 bool Slicer::eventHandler()
 {
 	sf::Event event;
@@ -73,6 +80,10 @@ bool Slicer::eventHandler()
 			}
 			if (event.key.code == sf::Keyboard::Z)
 				mainGraph.Undo();
+			if (event.key.code == sf::Keyboard::R)
+			{
+				Reset();
+			}
 			//case sf::Event::LostFocus: break;
 			//case sf::Event::GainedFocus: break;
 			//case sf::Event::TextEntered: break;

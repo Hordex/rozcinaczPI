@@ -68,7 +68,7 @@ public:
 	/// Moves this object to location.
 	/// </summary>
 	/// <param name="vector">The vector.</param>
-	void moveTo(glm::vec3 & vector);
+	void moveTo(glm::vec3 & vector) override;
 	/// <summary>
 	/// Sets the lookAt lock.
 	/// </summary>

@@ -32,6 +32,10 @@ class SceneObject
 	bool parentChanged;
 protected:
 	/// <summary>
+	/// The position of object
+	/// </summary>
+	glm::vec3 position;
+	/// <summary>
 	/// The rotation of object
 	/// </summary>
 	glm::quat rotation;
@@ -41,8 +45,9 @@ public:
 	/// Gets the world matrix
 	/// </summary>
 	/// <returns>  </returns>
-	glm::mat4& getWorldMatrix();
-	glm::mat4& getModelMatrix();
+	const glm::mat4& getWorldMatrix();
+	const glm::mat4& getModelMatrix();
+	const glm::vec3& getPosition() const;
 	virtual glm::vec3 getAABBMin() = 0;
 	virtual glm::vec3 getAABBMax() = 0;
 	virtual void MouseEnter() {}
@@ -54,11 +59,12 @@ public:
 		float& intersection_distance // Output : distance between ray_origin and the intersection with the OBB
 		);
 	void InvalidateParent();
-	void InvalidateWorldMatrix();
+	void InvalidateModelMatrix();
 	/// <summary>
-	/// The position of object
+	/// Moves this object to location.
 	/// </summary>
-	glm::vec3 position;
+	/// <param name="vector">The vector.</param>
+	virtual void moveTo(glm::vec3 & vector);
 	/// <summary>
 	/// Moves the object by specified vector
 	/// </summary>
@@ -69,6 +75,11 @@ public:
 	/// </summary>
 	/// <param name="rotaion">The rotaion.</param>
 	void setRotation(const glm::vec3 & rotaion);
+	/// <summary>
+	/// Sets the rotation of object
+	/// </summary>
+	/// <param name="rotaion">The rotaion.</param>
+	void rotateBy(const glm::vec3 & rotaion);
 	/// <summary>
 	/// Renders object with the specified shader program.
 	/// </summary>
@@ -84,5 +95,6 @@ public:
 	virtual ~SceneObject();
 	void addChild(SceneObject* child);
 	void removeChild(SceneObject* child);
+	void Mimic(glm::vec3 v1, glm::vec3 v2);
 };
 

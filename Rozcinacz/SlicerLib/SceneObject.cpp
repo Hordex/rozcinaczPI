@@ -18,7 +18,7 @@ void SceneObject::ParentUpdate(SceneObject* parent)
 	this->parent = parent;
 }
 
-glm::mat4& SceneObject::getWorldMatrix()
+const glm::mat4& SceneObject::getWorldMatrix()
 {
 	if (modelMatrixNeedsUpdate) 
 	{
@@ -33,9 +33,18 @@ glm::mat4& SceneObject::getWorldMatrix()
 	return worldMatrix;
 }
 
-glm::mat4& SceneObject::getModelMatrix()
+const glm::mat4& SceneObject::getModelMatrix()
 {
+	if (modelMatrixNeedsUpdate)
+	{
+		updateModelMatrix();
+	}
 	return modelMatrix;
+}
+
+const glm::vec3& SceneObject::getPosition() const
+{
+	return position;
 }
 
 bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance)
@@ -87,9 +96,13 @@ bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirec
 void SceneObject::InvalidateParent()
 {
 	parentChanged = true;
+	for (SceneObject* child : children)
+	{
+		child->InvalidateParent();
+	}
 }
 
-void SceneObject::InvalidateWorldMatrix()
+void SceneObject::InvalidateModelMatrix()
 {
 	modelMatrixNeedsUpdate = true;
 	for(SceneObject* child : children)
@@ -98,22 +111,34 @@ void SceneObject::InvalidateWorldMatrix()
 	}
 }
 
+void SceneObject::moveTo(glm::vec3& vector)
+{
+	InvalidateModelMatrix();
+	position = vector;
+}
+
 void SceneObject::moveBy(const glm::vec3 & vector)
 {
-	InvalidateWorldMatrix();
+	InvalidateModelMatrix();
 	position += vector;
 }
 
 void SceneObject::setRotation(const glm::vec3 & vector)
 {
-	InvalidateWorldMatrix();
+	InvalidateModelMatrix();
 	rotation = glm::quat(vector);
+}
+
+void SceneObject::rotateBy(const glm::vec3& rotaion)
+{
+	InvalidateModelMatrix();
+	this->rotation = glm::quat(rotaion)*this->rotation;
 }
 
 SceneObject::SceneObject()
 {
 	parentChanged = false;
-	InvalidateWorldMatrix();
+	InvalidateModelMatrix();
 	position = glm::vec3(.0f,.0f,.0f);
 	rotation = glm::quat(1.0f,.0f,.0f,.0f);
 }
@@ -136,4 +161,10 @@ void SceneObject::removeChild(SceneObject* child)
 	if (child)
 		child->ParentUpdate(nullptr);
 	children.remove_if([child](SceneObject* obj) {return child == obj; });
+}
+
+void SceneObject::Mimic(glm::vec3 v1, glm::vec3 v2)
+{
+	InvalidateModelMatrix();
+	rotation = glm::rotation(v1, v2)*rotation;
 }

@@ -16,6 +16,7 @@ class GraphNode
 	/// </summary>
 	int index;
 public:
+	Plane* GetPlane();
 	/// <summary>
 	/// Bind <see cref="Plane"/> to <see cref="GraphNode"/>.
 	/// </summary>

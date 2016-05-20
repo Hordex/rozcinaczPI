@@ -16,7 +16,7 @@ void Renderer::render(Scene& scene, Camera& camera) const
 	GLint worldmatrixLocation = glGetUniformLocation(program, "viewProjectionMatrix");
 	GLint cameraLocation = glGetUniformLocation(program, "cameraLocation");
 	glUniformMatrix4fv(worldmatrixLocation, 1, GL_FALSE, &(camera.getViewProjectionMatrix()[0][0]));
-	glUniform3fv(cameraLocation, 1, &camera.position[0]);
+	glUniform3fv(cameraLocation, 1, &camera.getPosition()[0]);
 
 	for(auto child : scene.children)
 	{

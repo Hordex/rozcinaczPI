@@ -3,6 +3,7 @@
 namespace cube {
 	namespace detail
 	{
+		// Top, Bottom, Left, Right, Front, Back
 		glm::vec3 positions[] =
 		{
 			glm::vec3(0.0f,1.0f,0.0f),
@@ -13,11 +14,11 @@ namespace cube {
 			glm::vec3(0.0f,0.0f,-1.0f)
 		};
 		glm::vec3 faceRotations[] = {
+			glm::vec3(0.0f, 0.0f, glm::radians(180.0f)),
 			glm::vec3(0.0f, 0.0f, 0.0f),
-			glm::vec3(0.0f, 0.0f, 0.0f),
+			glm::vec3(0.0f, 0.0f, glm::radians(-90.0f)),
 			glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-			glm::vec3(0.0f, 0.0f, glm::radians(90.0f)),
-			glm::vec3(glm::radians(90.0f), 0.0f, 0.0f),
+			glm::vec3(glm::radians(-90.0f), 0.0f, 0.0f),
 			glm::vec3(glm::radians(90.0f), 0.0f, 0.0f)
 		};
 	}
