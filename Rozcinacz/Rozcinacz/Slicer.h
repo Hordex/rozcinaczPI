@@ -5,7 +5,7 @@
 #include <Scene.h>
 #include <Camera.h>
 #include <Graph.h>
-
+#include <SFML/Window/Mouse.hpp>
 namespace sf
 {
 	class Window;

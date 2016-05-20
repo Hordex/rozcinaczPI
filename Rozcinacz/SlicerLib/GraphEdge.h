@@ -8,17 +8,12 @@ class GraphEdge
 {
 	class Collider* collider;
 	/// <summary>
-	/// The state of  <see cref="GraphEdge" />
-	/// </summary>
-	EdgeState state;
-	/// <summary>
 	/// The ends of  <see cref="GraphEdge" />
 	/// </summary>
 	int ends[2];
 public:
 	int From() const;
 	int To() const;
-	EdgeState State() const;
 	class Collider* CubeEdge() const;
 	/// <summary>
 	/// Initializes a new instance of the <see cref="GraphEdge" /> class.
@@ -26,7 +21,7 @@ public:
 	/// <param name="from">From vertex.</param>
 	/// <param name="to">To vertex.</param>
 	/// <param name="state">State of the edge.</param>
-	GraphEdge(int from, int to, EdgeState state, class Collider* collider);
+	GraphEdge(int from, int to, class Collider* collider);
 	/// <summary>
 	/// Finalizes an instance of the <see cref="GraphEdge"/> class.
 	/// </summary>

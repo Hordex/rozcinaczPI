@@ -1,6 +1,7 @@
 #include "Collider.h"
 #include <GL/glew.h>
 #include "MaterialInstances.h"
+#include <easylogging++.h>
 
 glm::vec3 Collider::collisoiinExtent(0.95f, 0.05f, 0.05f);
 
@@ -25,15 +26,17 @@ void Collider::MouseLeave()
 
 bool Collider::MouseClick(int& from, int& to)
 {
-	Cut();
+	LOG(TRACE) << "Clicked collider from " << connection[0] << " to " << connection[1];
+	isCut = true;
 	from = connection[0];
 	to = connection[1];
 	return true;
 }
 
-void Collider::Cut()
+void Collider::Restore()
 {
-	isCut = true;
+	LOG(TRACE) << "Restoring collider from " << connection[0] << " to " << connection[1];
+	isCut = false;
 }
 
 bool Collider::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance)
@@ -50,6 +53,7 @@ void Collider::Lock()
 
 void Collider::UnLock()
 {
+	LOG(TRACE) << "Unlocking collider from " << connection[0] << " to " << connection[1];
 	isLocked = false;
 	material = &materials::edges::normal;
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <list>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 
@@ -11,30 +11,38 @@ class SceneObject
 	/// <summary>
 	/// Collection of objects placed in model space of this object
 	/// </summary>
-	std::vector<SceneObject*> children;
+	std::list<SceneObject*> children;
 	/// <summary>
-	/// The world matrix or model matrix
+	/// The world matrix
 	/// </summary>
 	glm::mat4 worldMatrix;
 	/// <summary>
+	/// The model matrix
+	/// </summary>
+	glm::mat4 modelMatrix;
+	/// <summary>
 	/// The world matrix needs to be updated
 	/// </summary>
-	bool worldMatrixNeedsUpdate;
+	bool modelMatrixNeedsUpdate;
+	SceneObject* parent;
 	/// <summary>
 	/// Updates the world matrix
 	/// </summary>
-	void updateWorldMatrix();
+	void updateModelMatrix();
+	bool parentChanged;
 protected:
 	/// <summary>
 	/// The rotation of object
 	/// </summary>
 	glm::quat rotation;
+public:
+	void ParentUpdate(SceneObject* parent);
 	/// <summary>
 	/// Gets the world matrix
 	/// </summary>
 	/// <returns>  </returns>
 	glm::mat4& getWorldMatrix();
-public:
+	glm::mat4& getModelMatrix();
 	virtual glm::vec3 getAABBMin() = 0;
 	virtual glm::vec3 getAABBMax() = 0;
 	virtual void MouseEnter() {}
@@ -45,6 +53,8 @@ public:
 		glm::vec3 rayDirection,     // Ray direction (NOT target position!), in world space. Must be normalize()'d.
 		float& intersection_distance // Output : distance between ray_origin and the intersection with the OBB
 		);
+	void InvalidateParent();
+	void InvalidateWorldMatrix();
 	/// <summary>
 	/// The position of object
 	/// </summary>
@@ -72,5 +82,7 @@ public:
 	/// Finalizes an instance of the <see cref="SceneObject"/> class.
 	/// </summary>
 	virtual ~SceneObject();
+	void addChild(SceneObject* child);
+	void removeChild(SceneObject* child);
 };
 

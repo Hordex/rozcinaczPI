@@ -13,19 +13,13 @@ class Renderer
 	/// The shader program
 	/// </summary>
 	GLuint program;
-	/// <summary>
-	/// Renders object with additional world matrix.
-	/// </summary>
-	/// <param name="currentMatrix">The world matrix.</param>
-	/// <param name="object">The object.</param>
-	void render(glm::mat4 currentMatrix, SceneObject& object);
 public:
 	/// <summary>
 	/// Renders the specified scene.
 	/// </summary>
 	/// <param name="scene">The scene.</param>
 	/// <param name="camera">The camera.</param>
-	void render(Scene& scene, Camera& camera);
+	void render(Scene& scene, Camera& camera) const;
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Renderer"/> class.
 	/// </summary>

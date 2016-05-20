@@ -33,17 +33,16 @@ void Slicer::UpdateMouseUI(int mouse_x, int mouse_y)
 void Slicer::MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y)
 {
 	int from, to;
-	if (button == sf::Mouse::Right)
+	if (button == sf::Mouse::Left)
 	{
 		mouseDown = true;
 	}
-	if (button == sf::Mouse::Left)
+	if (button == sf::Mouse::Right)
 	{
 		if (objectUnderMouse)
 		{
 			if (objectUnderMouse->MouseClick(from, to))
 				mainGraph.CutEdge(from, to);
-			UpdateMouseUI(mouse_x, mouse_y);
 		}
 	}
 	lastPos[0] = mouse_x;
@@ -68,8 +67,12 @@ bool Slicer::eventHandler()
 			break;
 		case sf::Event::KeyPressed:
 			if (event.key.code == sf::Keyboard::Escape)
+			{
 				window->close();
-			return false;
+				return false;
+			}
+			if (event.key.code == sf::Keyboard::Z)
+				mainGraph.Undo();
 			//case sf::Event::LostFocus: break;
 			//case sf::Event::GainedFocus: break;
 			//case sf::Event::TextEntered: break;
@@ -95,11 +98,10 @@ bool Slicer::eventHandler()
 				pa += dy * magic;
 				pa = std::max(0.0001f, std::min(pa, (float)M_PI - 0.0001f));
 				newCam = true;
-
-				lastPos[0] = event.mouseMove.x;
-				lastPos[1] = event.mouseMove.y;
 			}
-			UpdateMouseUI(event.mouseMove.x, event.mouseMove.y);
+
+			lastPos[0] = event.mouseMove.x;
+			lastPos[1] = event.mouseMove.y;
 			break;
 			//case sf::Event::MouseEntered: break;
 			//case sf::Event::MouseLeft: break;
@@ -117,6 +119,7 @@ bool Slicer::eventHandler()
 			break;
 		}
 	}
+	UpdateMouseUI(lastPos[0], lastPos[1]);
 	return true;
 }
 

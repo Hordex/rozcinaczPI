@@ -29,7 +29,7 @@ public:
 	void MouseEnter() override;
 	void MouseLeave() override;
 	bool MouseClick(int& from, int& to) override;
-	void Cut();
+	void Restore();
 	bool TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance) override;
 	void Lock();
 	void UnLock();

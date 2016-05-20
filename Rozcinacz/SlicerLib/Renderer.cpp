@@ -6,12 +6,7 @@
 #include "Plane.h"
 
 
-void Renderer::render(glm::mat4 currentMatrix, SceneObject& object)
-{
-	object.render(program);
-}
-
-void Renderer::render(Scene& scene, Camera& camera)
+void Renderer::render(Scene& scene, Camera& camera) const
 {
 	glm::mat4 eye(1.0f);
 
@@ -25,7 +20,7 @@ void Renderer::render(Scene& scene, Camera& camera)
 
 	for(auto child : scene.children)
 	{
-		render(eye, *child);
+		child->render(program);
 	}
 }
 

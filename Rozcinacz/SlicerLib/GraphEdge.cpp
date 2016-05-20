@@ -4,34 +4,28 @@
 
 int GraphEdge::From() const
 {
-	return ends[0];
+	return this->ends[0];
 }
 
 int GraphEdge::To() const
 {
-	return ends[0];
-}
-
-EdgeState GraphEdge::State() const
-{
-	return state;
+	return this->ends[1];
 }
 
 Collider* GraphEdge::CubeEdge() const
 {
-	return collider;
+	return this->collider;
 }
 
-GraphEdge::GraphEdge(int from, int to, EdgeState state, Collider* collider)
+GraphEdge::GraphEdge(int from, int to, Collider* collider)
 {
 	this->collider = collider;
-	LOG(TRACE) << "Creating GraphEdge from: " << from <<" to: " << to << ", state: " << state;
-	this->state = state;
+	LOG(TRACE) << "Creating GraphEdge from: " << from << " to: " << to;
 	ends[0] = from;
 	ends[1] = to;
 }
 
 GraphEdge::~GraphEdge()
 {
-
+	LOG(TRACE) << "Deleting GraphEdge from: " << ends[0] << " to: " << ends[1];
 }

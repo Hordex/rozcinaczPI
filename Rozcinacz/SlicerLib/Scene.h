@@ -28,6 +28,11 @@ public:
 	/// </summary>
 	/// <param name="child">A child.</param>
 	void addChild(SceneObject* child);
+	/// <summary>
+	/// Removes a child.
+	/// </summary>
+	/// <param name="child">A child.</param>
+	void removeChild(SceneObject* child);
 	void Clear();
 	/// <summary>
 	/// Finalizes an instance of the <see cref="Scene"/> class.

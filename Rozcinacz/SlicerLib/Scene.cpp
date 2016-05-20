@@ -75,6 +75,11 @@ void Scene::addChild(SceneObject* child)
 	children.push_front(child);
 }
 
+void Scene::removeChild(SceneObject* child)
+{
+	children.remove_if([child](SceneObject* obj) {return obj == child; });
+}
+
 void Scene::Clear()
 {
 	LOG(TRACE) << "Clearing scene";

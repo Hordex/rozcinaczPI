@@ -4,16 +4,35 @@
 #include "EdgeState.h"
 #include "Collider.h"
 
-void Graph::Analyze(int i)
+std::list<GraphEdge*> Graph::Analyze(int i)
 {
+	std::list<GraphEdge*> ret;
 	LOG(TRACE) << "Checking node " << i << " for possible lock";
 	auto freeEdges = std::count_if(adjacencyVector[i].begin(), adjacencyVector[i].end(), [](EdgeRef& e) {return !std::get<1>(e); });
 	if(freeEdges == 1)
 	{
 		auto edge = std::find_if(adjacencyVector[i].begin(), adjacencyVector[i].end(), [](EdgeRef& e) {return !std::get<1>(e); });
 		LockEdge(i, std::get<0>(*edge));
-		Analyze(std::get<0>(*edge));
+		LOG(TRACE) << "Adding to history edge from " << i << " to " << std::get<0>(*edge);
+		ret.push_front(new GraphEdge(i, std::get<0>(*edge), std::get<2>(*edge)));
+		ret.splice(ret.end(), Analyze(std::get<0>(*edge)));
 	}
+	return ret;
+}
+
+bool Graph::Undo()
+{
+	if (history.empty()) return false;
+	LOG(TRACE) << "Undoing last action";
+	auto step = history.top(); history.pop();
+	for(GraphEdge* edge : step)
+	{
+		int from = edge->From();
+		int to = edge->To();
+		RestoreEdge(from, to);
+	}
+	step.remove_if([](GraphEdge* edge) {delete edge; return true; });
+	return true;
 }
 
 void Graph::LockEdge(int from, int to)
@@ -25,13 +44,17 @@ void Graph::LockEdge(int from, int to)
 	if (std::get<2>(*edge1))std::get<2>(*edge1)->Lock();
 }
 
-void Graph::UnLockEdge(int from, int to)
+void Graph::RestoreEdge(int from, int to)
 {
-	LOG(TRACE) << "Unlocking edge " << from << "-" << to;
-	auto edge1 = std::find_if(adjacencyVector[from].begin(), adjacencyVector[from].end(), [](EdgeRef& e) {return !std::get<1>(e); });
+	LOG(TRACE) << "Restoring edge " << from << "-" << to;
+	auto edge1 = std::find_if(adjacencyVector[from].begin(), adjacencyVector[from].end(), [to](EdgeRef& e) {return std::get<0>(e) == to; });
 	auto edge2 = std::find_if(adjacencyVector[to].begin(), adjacencyVector[to].end(), [from](EdgeRef& e) {return from == std::get<0>(e); });
 	std::get<1>(*edge1) = std::get<1>(*edge2) = Free;
-	if(std::get<2>(*edge1))std::get<2>(*edge1)->UnLock();
+	if(std::get<2>(*edge1))
+	{
+		std::get<2>(*edge1)->UnLock();
+		std::get<2>(*edge1)->Restore();
+	}
 }
 
 bool Graph::SetVertex(int index, Plane* plane)
@@ -116,8 +139,11 @@ bool Graph::CutEdge(int from, int to)
 	std::get<1>(*a) = Deleted;
 	auto b = std::find_if(adjacencyVector[to].begin(), adjacencyVector[to].end(), [from](const EdgeRef& e) {return std::get<0>(e) == from; });
 	std::get<1>(*b) = Deleted;
-	Analyze(from);
-	Analyze(to);
+	LOG(TRACE) << "Adding to history edge from " << from << " to " << to;
+	std::list<GraphEdge*> step = Analyze(from);
+	step.splice(step.end(), Analyze(to));
+	step.push_front(new GraphEdge(from, to, std::get<2>(*a)));
+	history.push(step);
 	return true;
 }
 
@@ -143,5 +169,10 @@ Graph::Graph(int vertices) : adjacencyVector(vertices), nodes(vertices)
 
 Graph::~Graph()
 {
-
+	while(!history.empty())
+	{
+		std::list<GraphEdge*> step = history.top();
+		history.pop();
+		step.remove_if([](GraphEdge* edge) {delete edge; return true; });
+	}
 }

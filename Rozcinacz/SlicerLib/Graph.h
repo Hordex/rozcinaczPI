@@ -3,6 +3,8 @@
 #include <list>
 #include "EdgeState.h"
 #include "GraphNode.h"
+#include "GraphEdge.h"
+#include <stack>
 
 class Plane;
 class Collider;
@@ -14,6 +16,7 @@ class Graph
 {
 	typedef std::tuple<int, EdgeState,Collider*> EdgeRef;
 	
+	std::stack<std::list<GraphEdge*>> history;
 	/// <summary>
 	/// The adjacency vector
 	/// </summary>
@@ -26,10 +29,11 @@ class Graph
 	/// The size of graph
 	/// </summary>
 	int size;
+	std::list<GraphEdge*> Analyze(int i);
 public:
-	void Analyze(int i);
+	bool Undo();
 	void LockEdge(int from, int to);
-	void UnLockEdge(int from, int to);
+	void RestoreEdge(int from, int to);
 	/// <summary>
 	/// Associates index with plane
 	/// </summary>

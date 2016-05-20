@@ -5,24 +5,42 @@
 #include <glm/detail/type_mat.hpp>
 
 
-void SceneObject::updateWorldMatrix()
+void SceneObject::updateModelMatrix()
 {
-	worldMatrix = glm::translate(glm::mat4(1.0f), position)*glm::toMat4(rotation);
+	modelMatrix = glm::translate(glm::mat4(1.0f), position)*glm::toMat4(rotation);
+	worldMatrix = modelMatrix;
+	modelMatrixNeedsUpdate = false;
+}
+
+void SceneObject::ParentUpdate(SceneObject* parent)
+{
+	InvalidateParent();
+	this->parent = parent;
 }
 
 glm::mat4& SceneObject::getWorldMatrix()
 {
-	if (worldMatrixNeedsUpdate) 
+	if (modelMatrixNeedsUpdate) 
 	{
-		worldMatrixNeedsUpdate = false;
-		updateWorldMatrix();
+		updateModelMatrix();
+	}
+	if(parentChanged)
+	{
+		if (parent)
+			worldMatrix = parent->getWorldMatrix() * modelMatrix;
+		parentChanged = false;
 	}
 	return worldMatrix;
 }
 
+glm::mat4& SceneObject::getModelMatrix()
+{
+	return modelMatrix;
+}
+
 bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance)
 {
-	glm::mat4 ModelMatrix = getWorldMatrix();
+	glm::mat4 RayWorldMatrix = getWorldMatrix();
 	glm::vec3 aabb_min = getAABBMin();
 	glm::vec3 aabb_max = getAABBMax();
 
@@ -31,13 +49,13 @@ bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirec
 	float tMin = 0.0f;
 	float tMax = 100000.0f;
 
-	glm::vec3 OBBposition_worldspace(ModelMatrix[3].x, ModelMatrix[3].y, ModelMatrix[3].z);
+	glm::vec3 OBBposition_worldspace(RayWorldMatrix[3].x, RayWorldMatrix[3].y, RayWorldMatrix[3].z);
 
 	glm::vec3 delta = OBBposition_worldspace - rayOrigin;
 
 	for (int i = 0; i<3; ++i)
 	{
-		glm::vec3 axis(ModelMatrix[i].x, ModelMatrix[i].y, ModelMatrix[i].z);
+		glm::vec3 axis(RayWorldMatrix[i].x, RayWorldMatrix[i].y, RayWorldMatrix[i].z);
 		float e = glm::dot(axis, delta);
 		float f = glm::dot(rayDirection, axis);
 
@@ -66,21 +84,36 @@ bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirec
 	return true;
 }
 
+void SceneObject::InvalidateParent()
+{
+	parentChanged = true;
+}
+
+void SceneObject::InvalidateWorldMatrix()
+{
+	modelMatrixNeedsUpdate = true;
+	for(SceneObject* child : children)
+	{
+		child->InvalidateParent();
+	}
+}
+
 void SceneObject::moveBy(const glm::vec3 & vector)
 {
-	worldMatrixNeedsUpdate = true;
+	InvalidateWorldMatrix();
 	position += vector;
 }
 
 void SceneObject::setRotation(const glm::vec3 & vector)
 {
-	worldMatrixNeedsUpdate = true;
+	InvalidateWorldMatrix();
 	rotation = glm::quat(vector);
 }
 
 SceneObject::SceneObject()
 {
-	worldMatrixNeedsUpdate = true;
+	parentChanged = false;
+	InvalidateWorldMatrix();
 	position = glm::vec3(.0f,.0f,.0f);
 	rotation = glm::quat(1.0f,.0f,.0f,.0f);
 }
@@ -89,4 +122,18 @@ SceneObject::SceneObject()
 SceneObject::~SceneObject()
 {
 	
+}
+
+void SceneObject::addChild(SceneObject* child)
+{
+	if (child)
+		child->ParentUpdate(this);
+	children.push_front(child);
+}
+
+void SceneObject::removeChild(SceneObject* child)
+{
+	if (child)
+		child->ParentUpdate(nullptr);
+	children.remove_if([child](SceneObject* obj) {return child == obj; });
 }
