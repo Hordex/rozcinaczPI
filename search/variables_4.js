@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal',['normal',['../class_plane.html#afde9acf6016a6376ec010868b6ad1787',1,'Plane']]]
+  ['ends',['ends',['../class_graph_edge.html#a632023f107bb5e6e6e41433c2930f3b7',1,'GraphEdge']]]
 ];

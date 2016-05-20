@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['moveby',['moveBy',['../class_camera.html#a337bd28925ea4b586f852f5964c8cddd',1,'Camera::moveBy()'],['../class_scene_object.html#a144749db2310bf8949ec1bbafeac0097',1,'SceneObject::moveBy()']]],
-  ['moveto',['moveTo',['../class_camera.html#a067a8804733093e54d714130c25bac13',1,'Camera']]]
+  ['history',['history',['../class_graph.html#a77009f6845682bf3e8c6d1b806f49b83',1,'Graph']]],
+  ['hover',['hover',['../namespacematerials_1_1edges.html#a73091c5b739297c8b4a682e824565938',1,'materials::edges']]]
 ];

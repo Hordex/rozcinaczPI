@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['renderer',['Renderer',['../class_renderer.html',1,'']]]
+  ['material',['Material',['../class_material.html',1,'']]]
 ];
