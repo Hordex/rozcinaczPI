@@ -38,6 +38,10 @@ namespace cube {
 
 	glm::vec3 GetEdgeRotation(Side side1, Side side2)
 	{
+		if (side1 > side2)
+		{
+			auto tmp = side1; side1 = side2; side2 = tmp;
+		}
 		if(side1 == Top || side1 == Bottom)
 		{
 			if (side2 == Left || side2 == Right)

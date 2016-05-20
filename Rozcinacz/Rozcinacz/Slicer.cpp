@@ -84,6 +84,7 @@ bool Slicer::eventHandler()
 			{
 				Reset();
 			}
+			break;
 			//case sf::Event::LostFocus: break;
 			//case sf::Event::GainedFocus: break;
 			//case sf::Event::TextEntered: break;

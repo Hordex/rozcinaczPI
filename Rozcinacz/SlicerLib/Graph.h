@@ -34,6 +34,7 @@ public:
 	bool Undo();
 	void Attach(int from, EdgeRef to);
 	void LockEdge(int from, int to);
+	void Detach(int from, EdgeRef edge);
 	void RestoreEdge(int from, int to);
 	/// <summary>
 	/// Associates index with plane

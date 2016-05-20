@@ -49,10 +49,7 @@ void Graph::Attach(int from, EdgeRef to)
 	glm::vec3 direction = glm::vec3(face2inverse*glm::vec4((face1->getPosition() - face2->getPosition()),0));
 	face1->rotateBy( - cube::GetFaceRotation((cube::Side)toIndex));
 	direction.y = 0;
-	if(fabs(direction.x) < 0.01f)
-		col->setRotation(glm::vec3(0,0,0));
-	else
-		col->setRotation(glm::vec3(0, glm::radians(90.0f), 0));
+	col->setRotation(glm::vec3(0, glm::radians(90.0f * direction.x), 0));
 	direction = glm::normalize(direction);
 	face1->Mimic(-direction, glm::vec3(0, 1, 0));
 	col->moveTo(direction);
@@ -70,17 +67,39 @@ void Graph::LockEdge(int from, int to)
 	if (std::get<2>(*edge1))std::get<2>(*edge1)->Lock();
 }
 
+void Graph::Detach(int from, EdgeRef edge)
+{
+	Collider* col = std::get<2>(edge);
+	int toIndex = std::get<0>(edge);
+	Plane* face1 = nodes[from].GetPlane();
+	Plane* face2 = nodes[toIndex].GetPlane();
+	face2->removeChild(face1);
+	face2->removeChild(col);
+	face1->moveTo(cube::GetFacePosition((cube::Side)from));
+	face1->setRotation(cube::GetFaceRotation((cube::Side)from));
+	col->moveTo(cube::GetEdgePosition((cube::Side)from, (cube::Side)toIndex));
+	col->setRotation(cube::GetEdgeRotation((cube::Side)from, (cube::Side)toIndex));
+}
+
 void Graph::RestoreEdge(int from, int to)
 {
 	LOG(TRACE) << "Restoring edge " << from << "-" << to;
 	auto edge1 = std::find_if(adjacencyVector[from].begin(), adjacencyVector[from].end(), [to](EdgeRef& e) {return std::get<0>(e) == to; });
 	auto edge2 = std::find_if(adjacencyVector[to].begin(), adjacencyVector[to].end(), [from](EdgeRef& e) {return from == std::get<0>(e); });
-	std::get<1>(*edge1) = std::get<1>(*edge2) = Free;
 	if(std::get<2>(*edge1))
 	{
-		std::get<2>(*edge1)->UnLock();
-		std::get<2>(*edge1)->Restore();
+		switch(std::get<1>(*edge1))
+		{
+		case Locked:
+			std::get<2>(*edge1)->UnLock();
+			Detach(from, *edge1);
+			break;
+		case Deleted:
+			std::get<2>(*edge1)->Restore();
+			break;
+		}
 	}
+	std::get<1>(*edge1) = std::get<1>(*edge2) = Free;
 }
 
 bool Graph::SetVertex(int index, Plane* plane)
