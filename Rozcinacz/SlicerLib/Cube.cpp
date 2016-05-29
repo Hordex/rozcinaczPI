@@ -1,4 +1,5 @@
 #include "Cube.h"
+#include <glm/glm.hpp>
 
 namespace cube {
 	namespace detail

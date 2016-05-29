@@ -1,6 +1,6 @@
 #ifndef __CUBE__
 #define __CUBE__
-#include <glm/glm.hpp>
+#include <glm/fwd.hpp>
 
 namespace cube
 {

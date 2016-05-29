@@ -8,10 +8,7 @@
 /// </summary>
 class SceneObject
 {
-	/// <summary>
-	/// Collection of objects placed in model space of this object
-	/// </summary>
-	std::list<SceneObject*> children;
+	glm::mat4 miscMatrix;
 	/// <summary>
 	/// The world matrix
 	/// </summary>
@@ -23,14 +20,20 @@ class SceneObject
 	/// <summary>
 	/// The world matrix needs to be updated
 	/// </summary>
+	bool parentChanged;
 	bool modelMatrixNeedsUpdate;
-	SceneObject* parent;
 	/// <summary>
 	/// Updates the world matrix
 	/// </summary>
 	void updateModelMatrix();
-	bool parentChanged;
 protected:
+	SceneObject* parent;
+	/// <summary>
+	/// Collection of objects placed in model space of this object
+	/// </summary>
+	std::list<SceneObject*> children;
+	void RemoveAllChildren();
+	virtual glm::mat4 CreateModelMatrix() const;
 	/// <summary>
 	/// The position of object
 	/// </summary>
@@ -40,7 +43,9 @@ protected:
 	/// </summary>
 	glm::quat rotation;
 public:
+	virtual bool FrameUpdate(float dt);
 	void ParentUpdate(SceneObject* parent);
+	void UpdateParentSpace();
 	/// <summary>
 	/// Gets the world matrix
 	/// </summary>
@@ -48,6 +53,12 @@ public:
 	const glm::mat4& getWorldMatrix();
 	const glm::mat4& getModelMatrix();
 	const glm::vec3& getPosition() const;
+
+	const glm::quat& getRotation() const
+	{
+		return rotation;
+	}
+
 	virtual glm::vec3 getAABBMin() = 0;
 	virtual glm::vec3 getAABBMax() = 0;
 	virtual void MouseEnter() {}
@@ -75,6 +86,8 @@ public:
 	/// </summary>
 	/// <param name="rotaion">The rotaion.</param>
 	void setRotation(const glm::vec3 & rotaion);
+	void setRotation(const glm::quat & rotaion);
+	void ApplySpace(const glm::mat4& matrix);
 	/// <summary>
 	/// Sets the rotation of object
 	/// </summary>

@@ -2,8 +2,57 @@
 #include <GL/glew.h>
 #include "MaterialInstances.h"
 #include <easylogging++.h>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 glm::vec3 Collider::collisoiinExtent(0.95f, 0.05f, 0.05f);
+
+void Collider::SetJointRotation(glm::quat& rot)
+{
+	//InvalidateModelMatrix();
+	timeElapsed = 0.0f;
+	startJointRotation = jointRotation;
+	targetJointRotation = rot;
+}
+
+bool Collider::FrameUpdate(float dt)
+{
+	if (timeElapsed >= 1.0f)
+		return false;
+	timeElapsed += dt;
+	auto newRot = glm::mix(startJointRotation,targetJointRotation, min(timeElapsed,1.0f));
+	InvalidateModelMatrix();
+	if (timeElapsed >= 1.0f)
+	{
+		jointRotation = targetJointRotation;
+		if(shouldBreakChain)
+		{
+			BreakChain();
+		}
+		startJointRotation = targetJointRotation;
+	}
+	else
+		jointRotation = newRot;
+
+	return true;
+}
+
+void Collider::BreakChain()
+{
+	for(auto child : children)
+	{
+		child->ApplySpace(glm::one<glm::mat4>());
+	}
+	RemoveAllChildren();
+	this->ApplySpace(glm::one<glm::mat4>());
+	//this->ApplySpace(parent->getWorldMatrix());
+	parent->removeChild(this);
+}
+
+glm::mat4 Collider::CreateModelMatrix() const
+{
+	return glm::translate(glm::mat4(1.0f), position)*glm::toMat4(rotation * jointRotation);
+}
 
 glm::vec3 Collider::getAABBMin()
 {
@@ -92,7 +141,21 @@ void Collider::render(unsigned shaderProgram)
 
 }
 
-Collider::Collider()
+void Collider::JointRotateBy(float angle, bool breakChain)
+{
+	glm::quat rot(glm::vec3(angle,0.f,0.f));
+	this->SetJointRotation(this->targetJointRotation * rot);
+	this->shouldBreakChain = breakChain;
+}
+
+void Collider::JointRotateTo(float angle, bool breakChain)
+{
+	glm::quat rot(glm::vec3(angle, 0.f, 0.f));
+	this->SetJointRotation(rot);
+	this->shouldBreakChain = breakChain;
+}
+
+Collider::Collider() :jointRotation(glm::vec3(0, 0, 0)),targetJointRotation(jointRotation),timeElapsed(999.9f)
 {
 	material = &materials::edges::normal;
 	vertices[0] = glm::vec3(-1.0f, 0.0f, 0.0f);

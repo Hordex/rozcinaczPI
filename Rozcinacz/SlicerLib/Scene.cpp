@@ -5,6 +5,16 @@
 #include <easylogging++.h>
 #include "Collider.h"
 
+bool Scene::FrameUpdate(float dt)
+{
+	bool ret = false;
+	for(auto child : children)
+	{
+		ret = child->FrameUpdate(dt) || ret;
+	}
+	return ret;
+}
+
 SceneObject* Scene::CastRay(glm::vec3 origin, glm::vec3 direction)
 {
 	SceneObject* ret = nullptr;

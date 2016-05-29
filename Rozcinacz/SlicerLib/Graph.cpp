@@ -5,6 +5,8 @@
 #include "Collider.h"
 #include "Plane.h"
 #include "Cube.h"
+#include <glm/gtx/quaternion.inl>
+#include <glm/gtx/norm.inl>
 
 std::list<GraphEdge*> Graph::Analyze(int i)
 {
@@ -16,8 +18,8 @@ std::list<GraphEdge*> Graph::Analyze(int i)
 		auto edge = std::find_if(adjacencyVector[i].begin(), adjacencyVector[i].end(), [](EdgeRef& e) {return !std::get<1>(e); });
 		LockEdge(i, std::get<0>(*edge));
 		LOG(TRACE) << "Adding to history edge from " << i << " to " << std::get<0>(*edge);
-		ret.push_front(new GraphEdge(i, std::get<0>(*edge), std::get<2>(*edge)));
 		ret.splice(ret.end(), Analyze(std::get<0>(*edge)));
+		ret.push_back(new GraphEdge(i, std::get<0>(*edge), std::get<2>(*edge)));
 	}
 	return ret;
 }
@@ -43,18 +45,20 @@ void Graph::Attach(int from, EdgeRef to)
 	int toIndex = std::get<0>(to);
 	Plane* face1 = nodes[from].GetPlane();
 	Plane* face2 = nodes[toIndex].GetPlane();
-	face2->addChild(face1);
 	face2->addChild(col);
-	auto face2inverse = glm::inverse(face2->getWorldMatrix());
-	glm::vec3 direction = glm::vec3(face2inverse*glm::vec4((face1->getPosition() - face2->getPosition()),0));
-	face1->rotateBy( - cube::GetFaceRotation((cube::Side)toIndex));
-	direction.y = 0;
-	col->setRotation(glm::vec3(0, glm::radians(90.0f * direction.x), 0));
-	direction = glm::normalize(direction);
-	face1->Mimic(-direction, glm::vec3(0, 1, 0));
-	col->moveTo(direction);
-	direction *= 2.0f;
-	face1->moveTo(direction);
+	col->ApplySpace(glm::inverse(face2->getWorldMatrix()));
+	col->addChild(face1);
+	face1->ApplySpace(glm::inverse(col->getWorldMatrix()));
+	auto pos = col->getPosition();
+	auto rot = col->getRotation();
+	auto face1pos = face1->getPosition();
+	float angle = 90.f;
+	auto target = col->getWorldMatrix() * glm::vec4(face1pos.x, - face1pos.z,face1pos.y, 1.0f);
+	if(fabs(target.x) < 1.9f && fabs(target.y) < 1.9f && fabs(target.z) < 1.9f)
+	{
+		angle *= -1;
+	}
+	col->JointRotateBy(glm::radians(angle));
 }
 
 void Graph::LockEdge(int from, int to)
@@ -73,12 +77,7 @@ void Graph::Detach(int from, EdgeRef edge)
 	int toIndex = std::get<0>(edge);
 	Plane* face1 = nodes[from].GetPlane();
 	Plane* face2 = nodes[toIndex].GetPlane();
-	face2->removeChild(face1);
-	face2->removeChild(col);
-	face1->moveTo(cube::GetFacePosition((cube::Side)from));
-	face1->setRotation(cube::GetFaceRotation((cube::Side)from));
-	col->moveTo(cube::GetEdgePosition((cube::Side)from, (cube::Side)toIndex));
-	col->setRotation(cube::GetEdgeRotation((cube::Side)from, (cube::Side)toIndex));
+	col->JointRotateTo(0.0f,true);
 }
 
 void Graph::RestoreEdge(int from, int to)
@@ -96,6 +95,8 @@ void Graph::RestoreEdge(int from, int to)
 			break;
 		case Deleted:
 			std::get<2>(*edge1)->Restore();
+			break;
+		default:
 			break;
 		}
 	}

@@ -15,6 +15,7 @@ namespace sf
 /// </summary>
 class Slicer
 {
+	bool AllowInput;
 	Scene mainScene;
 	Camera mainCamera;
 	Graph mainGraph;

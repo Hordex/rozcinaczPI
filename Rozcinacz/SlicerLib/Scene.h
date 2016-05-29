@@ -11,6 +11,7 @@ class Plane;
 class Scene
 {
 public:
+	bool FrameUpdate(float dt);
 	SceneObject* CastRay(glm::vec3 origin, glm::vec3 direction);
 	void CreateFaces(Graph& graph);
 	void CreateEdges(Graph& graph);

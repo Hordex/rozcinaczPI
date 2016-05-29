@@ -7,15 +7,40 @@
 
 void SceneObject::updateModelMatrix()
 {
-	modelMatrix = glm::translate(glm::mat4(1.0f), position)*glm::toMat4(rotation);
+	modelMatrix = miscMatrix*CreateModelMatrix();
 	worldMatrix = modelMatrix;
+	UpdateParentSpace();
 	modelMatrixNeedsUpdate = false;
+}
+
+void SceneObject::RemoveAllChildren()
+{
+	for (auto child : children)
+		child->ParentUpdate(nullptr);
+	children.clear();
+}
+
+glm::mat4 SceneObject::CreateModelMatrix() const
+{
+	return glm::translate(glm::mat4(1.0f), position)*glm::toMat4(rotation);
+}
+
+bool SceneObject::FrameUpdate(float dt)
+{
+	return false;
 }
 
 void SceneObject::ParentUpdate(SceneObject* parent)
 {
 	InvalidateParent();
 	this->parent = parent;
+}
+
+void SceneObject::UpdateParentSpace()
+{
+	if (parent)
+		worldMatrix = parent->getWorldMatrix() * modelMatrix;
+	parentChanged = false;
 }
 
 const glm::mat4& SceneObject::getWorldMatrix()
@@ -26,9 +51,7 @@ const glm::mat4& SceneObject::getWorldMatrix()
 	}
 	if(parentChanged)
 	{
-		if (parent)
-			worldMatrix = parent->getWorldMatrix() * modelMatrix;
-		parentChanged = false;
+		UpdateParentSpace();
 	}
 	return worldMatrix;
 }
@@ -125,8 +148,25 @@ void SceneObject::moveBy(const glm::vec3 & vector)
 
 void SceneObject::setRotation(const glm::vec3 & vector)
 {
+	setRotation(glm::quat(vector));
+}
+
+void SceneObject::setRotation(const glm::quat& rotaion)
+{
 	InvalidateModelMatrix();
-	rotation = glm::quat(vector);
+	this->rotation = rotaion;
+}
+
+void SceneObject::ApplySpace(const glm::mat4& matrix)
+{
+	InvalidateModelMatrix();
+	miscMatrix = matrix;
+	return;
+	glm::vec4 dest = (matrix * glm::vec4(position, 1.0));
+	position.x = round(dest.x);
+	position.y = round(dest.y);
+	position.z = round(dest.z);
+	rotation = glm::toQuat(matrix) *rotation;
 }
 
 void SceneObject::rotateBy(const glm::vec3& rotaion)
@@ -135,7 +175,7 @@ void SceneObject::rotateBy(const glm::vec3& rotaion)
 	this->rotation = glm::quat(rotaion)*this->rotation;
 }
 
-SceneObject::SceneObject()
+SceneObject::SceneObject():parent(nullptr),miscMatrix(glm::one<glm::mat4>())
 {
 	parentChanged = false;
 	InvalidateModelMatrix();

@@ -15,9 +15,12 @@
 void Slicer::UpdateMouseUI(int mouse_x, int mouse_y)
 {
 	SceneObject* nextObjectUnderMouse = nullptr;
-	glm::vec3 origin, direction;
-	mainCamera.ScreenPosToWorldRay(mouse_x, mouse_y, width, height, origin, direction);
-	nextObjectUnderMouse = mainScene.CastRay(origin, direction);
+	if (AllowInput)
+	{
+		glm::vec3 origin, direction;
+		mainCamera.ScreenPosToWorldRay(mouse_x, mouse_y, width, height, origin, direction);
+		nextObjectUnderMouse = mainScene.CastRay(origin, direction);
+	}
 	if(nextObjectUnderMouse)
 	{
 		if(objectUnderMouse != nextObjectUnderMouse)
@@ -37,7 +40,7 @@ void Slicer::MousePressed(sf::Mouse::Button button, int mouse_x, int mouse_y)
 	{
 		mouseDown = true;
 	}
-	if (button == sf::Mouse::Right)
+	if (button == sf::Mouse::Right && AllowInput)
 	{
 		if (objectUnderMouse)
 		{
@@ -73,16 +76,20 @@ bool Slicer::eventHandler()
 			newAspectRatio = true;
 			break;
 		case sf::Event::KeyPressed:
-			if (event.key.code == sf::Keyboard::Escape)
+			switch (event.key.code)
 			{
+			case sf::Keyboard::Escape:
 				window->close();
 				return false;
-			}
-			if (event.key.code == sf::Keyboard::Z)
-				mainGraph.Undo();
-			if (event.key.code == sf::Keyboard::R)
-			{
+			case sf::Keyboard::Z:
+				if(AllowInput)
+					mainGraph.Undo();
+				break;
+			case sf::Keyboard::R:
 				Reset();
+				break;
+			default:
+				break;
 			}
 			break;
 			//case sf::Event::LostFocus: break;
@@ -146,7 +153,7 @@ void Slicer::calculateCameraPosition(class Camera& camera) const
 	camera.moveTo(ret);
 }
 
-Slicer::Slicer():mainCamera(75.0f, 800, 600, 0.1f, 1000.0f),mainGraph(6)
+Slicer::Slicer():mainCamera(75.0f, 800, 600, 0.1f, 1000.0f),mainGraph(6),AllowInput(true)
 {
 	objectUnderMouse = nullptr;
 	width = 800;
@@ -161,7 +168,7 @@ Slicer::Slicer():mainCamera(75.0f, 800, 600, 0.1f, 1000.0f),mainGraph(6)
 	calculateCameraPosition(mainCamera);
 	mainCamera.lookAt(glm::vec3(0, 0, 0));
 	mainCamera.setLookAtLock(true);
-
+	sf::Clock clock;
 	// run the main loop
 	while (window->isOpen() && eventHandler())
 	{
@@ -183,6 +190,7 @@ Slicer::Slicer():mainCamera(75.0f, 800, 600, 0.1f, 1000.0f),mainGraph(6)
 
 		// end the current frame (internally swaps the front and back buffers)
 		window->display();
+		AllowInput = !mainScene.FrameUpdate(clock.restart().asSeconds());
 	}
 }
 

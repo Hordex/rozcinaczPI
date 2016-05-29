@@ -6,6 +6,11 @@
 class Collider :
 	public SceneObject
 {
+	glm::quat jointRotation;
+	glm::quat targetJointRotation;
+	float timeElapsed;
+	glm::quat startJointRotation;
+	bool shouldBreakChain;
 	static glm::vec3 collisoiinExtent;
 	/// <summary>
 	/// The vertices
@@ -17,13 +22,18 @@ class Collider :
 	int connection[2];
 	bool isLocked = false;
 	bool isCut = false;
+	void BreakChain();
 #ifdef _DEBUG
 	GLuint debugVAO;
 	GLuint debugBOs[2];
 	glm::vec3 debugVertices[8];
 	int debugIndices[16] = { 0,1,2,3,0, 4, 5, 6, 7, 4, 5, 1, 2, 6, 7, 3};
 #endif
+protected:
+	glm::mat4 CreateModelMatrix() const override;
+	void SetJointRotation(glm::quat& rot);
 public:
+	bool FrameUpdate(float dt) override;
 	glm::vec3 getAABBMin() override;
 	glm::vec3 getAABBMax() override;
 	void MouseEnter() override;
@@ -36,6 +46,8 @@ public:
 	void SetConnection(int,int);
 	int* GetConnection();
 	void render(unsigned shaderProgram) override;
+	void JointRotateBy(float angle, bool breakChain = false);
+	void JointRotateTo(float angle, bool breakChain = false);
 	Collider();
 	~Collider();
 };
