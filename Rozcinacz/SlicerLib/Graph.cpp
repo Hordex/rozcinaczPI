@@ -47,14 +47,13 @@ void Graph::Attach(int from, EdgeRef to)
 	glm::vec3 face1orig = face1->getPosition(),
 		face2orig = face2->getPosition(),
 		axis = glm::abs(glm::cross(face1orig, face2orig));
-	auto ang = glm::orientedAngle(face1orig, face2orig,axis);
+	auto angle = glm::orientedAngle(face1orig, face2orig,axis);
 	face2->addChild(col);
 	col->ApplySpace(glm::inverse(face2->getWorldMatrix()));
 	col->addChild(face1);
 	face1->ApplySpace(glm::inverse(col->getWorldMatrix()));
 	auto face1pos = face1->getModelPosition();
-	float angle = 90.f;
-	col->JointRotateBy(ang);
+	col->JointRotateBy(angle);
 }
 
 void Graph::LockEdge(int from, int to)
