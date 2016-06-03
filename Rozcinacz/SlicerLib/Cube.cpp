@@ -46,7 +46,7 @@ namespace cube {
 		if(side1 == Top || side1 == Bottom)
 		{
 			if (side2 == Left || side2 == Right)
-				return glm::vec3(0, glm::radians(90.0f), 0);
+				return glm::vec3(0, glm::radians(-90.0f), 0);
 		}
 		else
 			return glm::vec3(0, 0, glm::radians(90.0f));

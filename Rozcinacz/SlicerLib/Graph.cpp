@@ -5,8 +5,7 @@
 #include "Collider.h"
 #include "Plane.h"
 #include "Cube.h"
-#include <glm/gtx/quaternion.inl>
-#include <glm/gtx/norm.inl>
+#include <glm/gtx/vector_angle.hpp>
 
 std::list<GraphEdge*> Graph::Analyze(int i)
 {
@@ -45,18 +44,17 @@ void Graph::Attach(int from, EdgeRef to)
 	int toIndex = std::get<0>(to);
 	Plane* face1 = nodes[from].GetPlane();
 	Plane* face2 = nodes[toIndex].GetPlane();
+	glm::vec3 face1orig = face1->getPosition(),
+		face2orig = face2->getPosition(),
+		axis = glm::abs(glm::cross(face1orig, face2orig));
+	auto ang = glm::orientedAngle(face1orig, face2orig,axis);
 	face2->addChild(col);
 	col->ApplySpace(glm::inverse(face2->getWorldMatrix()));
 	col->addChild(face1);
 	face1->ApplySpace(glm::inverse(col->getWorldMatrix()));
 	auto face1pos = face1->getModelPosition();
 	float angle = 90.f;
-	auto target = col->getWorldMatrix() * glm::vec4(face1pos.x, - face1pos.z,face1pos.y, 1.0f);
-	if(fabs(target.x) < 1.7f && fabs(target.y) < 1.7f && fabs(target.z) < 1.7f)
-	{
-		angle *= -1;
-	}
-	col->JointRotateBy(glm::radians(angle));
+	col->JointRotateBy(ang);
 }
 
 void Graph::LockEdge(int from, int to)
