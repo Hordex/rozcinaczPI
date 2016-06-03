@@ -70,6 +70,12 @@ const glm::vec3& SceneObject::getPosition() const
 	return position;
 }
 
+const glm::vec3 SceneObject::getModelPosition()
+{
+	glm::vec4 pos = getModelMatrix() * glm::vec4(position, 1.0f);
+	return glm::vec3(pos.x, pos.y, pos.z);
+}
+
 bool SceneObject::TestRayOBBIntersection(glm::vec3 rayOrigin, glm::vec3 rayDirection, float& intersection_distance)
 {
 	glm::mat4 RayWorldMatrix = getWorldMatrix();

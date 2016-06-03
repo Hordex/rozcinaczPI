@@ -9,7 +9,6 @@ glm::vec3 Collider::collisoiinExtent(0.95f, 0.05f, 0.05f);
 
 void Collider::SetJointRotation(glm::quat& rot)
 {
-	//InvalidateModelMatrix();
 	timeElapsed = 0.0f;
 	startJointRotation = jointRotation;
 	targetJointRotation = rot;
@@ -45,7 +44,6 @@ void Collider::BreakChain()
 	}
 	RemoveAllChildren();
 	this->ApplySpace(glm::one<glm::mat4>());
-	//this->ApplySpace(parent->getWorldMatrix());
 	parent->removeChild(this);
 }
 

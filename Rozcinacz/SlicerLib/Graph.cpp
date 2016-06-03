@@ -51,10 +51,10 @@ void Graph::Attach(int from, EdgeRef to)
 	face1->ApplySpace(glm::inverse(col->getWorldMatrix()));
 	auto pos = col->getPosition();
 	auto rot = col->getRotation();
-	auto face1pos = face1->getPosition();
+	auto face1pos = face1->getModelPosition();
 	float angle = 90.f;
 	auto target = col->getWorldMatrix() * glm::vec4(face1pos.x, - face1pos.z,face1pos.y, 1.0f);
-	if(fabs(target.x) < 1.9f && fabs(target.y) < 1.9f && fabs(target.z) < 1.9f)
+	if(fabs(target.x) < 1.7f && fabs(target.y) < 1.7f && fabs(target.z) < 1.7f)
 	{
 		angle *= -1;
 	}

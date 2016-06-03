@@ -2,6 +2,7 @@
 #include <list>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
+#include "../packages/glm.0.9.7.1/build/native/include/glm/detail/type_mat.hpp"
 
 /// <summary>
 /// Base class for objects displayed on scene
@@ -53,6 +54,7 @@ public:
 	const glm::mat4& getWorldMatrix();
 	const glm::mat4& getModelMatrix();
 	const glm::vec3& getPosition() const;
+	const glm::vec3 getModelPosition();
 
 	const glm::quat& getRotation() const
 	{
